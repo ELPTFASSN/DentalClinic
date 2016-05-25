@@ -29,5 +29,11 @@ namespace DentalClinic
             }
             else { e.Cancel = true; }
         }
+
+        private void mnuAbout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            WinForms.About.Show();
+        }
     }
 }

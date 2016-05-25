@@ -22,5 +22,17 @@ namespace DentalClinic
                 return main;
             }
         }
+        private static Form about;
+        public static Form About
+        {
+            get
+            {
+                if (about == null)
+                {
+                    about = new frmAbout();
+                }
+                return about;
+            }
+        }
     }
 }
