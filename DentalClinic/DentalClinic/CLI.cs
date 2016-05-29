@@ -12,8 +12,7 @@ namespace DentalClinic
 {
     public partial class frmCLI : Form
     {
-        SQLLib queri = new SQLLib(".\\SQLEXPRESS", "Dentista");
-
+        SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "Dentista");
         public frmCLI()
         {
             InitializeComponent();
@@ -35,7 +34,7 @@ namespace DentalClinic
 
         private void btnSQLExec_Click(object sender, EventArgs e)
         {
-            queri.CommandExec(txtCommand, dbGrid);
+            sQuery.CommandExec(txtCommand, dbGrid);
         }
     }
 }

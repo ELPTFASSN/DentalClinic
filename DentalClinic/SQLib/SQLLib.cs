@@ -11,23 +11,33 @@ using System.Data.OleDb;
 
 namespace SQLib
 {
-    public class SQLLib:SQLConnect
+    public class SQLLib:SQLConnect,Interface.iCommand
     {
         //Data Source=FAMILY-PC\SQLEXPRESS;Initial Catalog=EX_5;Integrated Security=True
-        public SQLLib(string serverName,string databaseName)
+
+        /// <summary>
+        /// SQLLib default constructor
+        /// </summary>
+        public SQLLib()
+        { }
+
+        /// <summary>
+        /// SQLLib constructor with parameters
+        /// </summary>
+        /// <param name="serverName"></param>
+        /// <param name="databaseName"></param>
+        public SQLLib(string serverName, string databaseName)
         {
             this.ServerName = serverName;
             this.DatabaseName = databaseName;
         }
-        string sqlCommand;
+
+        private string sqlCommand;
         public string Command
         {
             get { return sqlCommand; }
             set { sqlCommand = value; }
         }
-
-        public SQLLib()
-        { }
 
         /// <summary>
         /// Execute command directly and display result to data grid view

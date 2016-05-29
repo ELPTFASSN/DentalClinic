@@ -102,6 +102,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OLELib\OLELib.csproj">
+      <Project>{ae1f8cab-0605-40d8-b12c-dfd55e5bb06a}</Project>
+      <Name>OLELib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SQLib\SQLib.csproj">
       <Project>{59d37c6b-6fd2-48c7-aadb-619c8a56f940}</Project>
       <Name>SQLib</Name>

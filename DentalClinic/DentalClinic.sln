@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DentalClinic", "DentalClini
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLib", "SQLib\SQLib.csproj", "{59D37C6B-6FD2-48C7-AADB-619C8A56F940}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OLELib", "OLELib\OLELib.csproj", "{AE1F8CAB-0605-40D8-B12C-DFD55E5BB06A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{59D37C6B-6FD2-48C7-AADB-619C8A56F940}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59D37C6B-6FD2-48C7-AADB-619C8A56F940}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59D37C6B-6FD2-48C7-AADB-619C8A56F940}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE1F8CAB-0605-40D8-B12C-DFD55E5BB06A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE1F8CAB-0605-40D8-B12C-DFD55E5BB06A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE1F8CAB-0605-40D8-B12C-DFD55E5BB06A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE1F8CAB-0605-40D8-B12C-DFD55E5BB06A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
