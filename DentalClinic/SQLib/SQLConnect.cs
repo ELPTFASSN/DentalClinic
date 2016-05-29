@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SQLib
 {
-    //Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Family\Source\Repos\DentalClinic\DentalClinic\DentalClinic\DentalClinic.accdb
+    //Data Source=FAMILY-PC\SQLEXPRESS;Initial Catalog=EX_5;Integrated Security=True
     public class SQLConnect:Interface.iConnect
     {
         private string serverName;
@@ -21,10 +21,32 @@ namespace SQLib
             get { return databaseName; }
             set { databaseName = value; }
         }
-
         public string ConnectString()
         {
-            return string.Concat("Provider=", ServerName, "Data Source=", DatabaseName,"");
+            return string.Concat("Data Source=", ServerName, ";Initial Catalog=", DatabaseName, ";Integrated Security=True");
         }
+
+        /// <summary>
+        /// SQLConnect constructor with parameters
+        /// </summary>
+        /// <param name="_ServerName"></param>
+        /// <param name="_DatabaseName"></param>
+        public SQLConnect(string _ServerName, string _DatabaseName)
+        {
+            ServerName = _ServerName;
+            DatabaseName = _DatabaseName;
+        }
+
+        public SQLConnect(SQLConnect connector)
+        {
+            DatabaseName = connector.DatabaseName;
+            ServerName = connector.ServerName;
+        }
+
+        /// <summary>
+        /// SQLConnect default constructor
+        /// </summary>
+        public SQLConnect()
+        { }
     }
 }

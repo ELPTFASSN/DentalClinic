@@ -22,6 +22,7 @@ namespace DentalClinic
                 return main;
             }
         }
+
         private static Form about;
         public static Form About
         {
@@ -32,6 +33,19 @@ namespace DentalClinic
                     about = new frmAbout();
                 }
                 return about;
+            }
+        }
+
+        private static Form cli;
+        public static Form CommandLineInterface
+        {
+            get
+            {
+                if (cli == null)
+                {
+                    cli = new frmCLI();
+                }
+                return cli;
             }
         }
     }

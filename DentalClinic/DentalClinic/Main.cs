@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SQLib;
 using System.Data.SqlClient;
+using System.Data.OleDb;
 
 namespace DentalClinic
 {
@@ -39,6 +40,16 @@ namespace DentalClinic
         {
             this.Hide();
             WinForms.About.Show();
+        }
+
+        private void mnuDebug_Click(object sender, EventArgs e)
+        {
+            WinForms.CommandLineInterface.Show();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
