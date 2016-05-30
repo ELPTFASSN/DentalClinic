@@ -16,8 +16,9 @@ namespace DentalClinic
     public partial class frmCLI : Form
     {
         //Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\openlab-mkt-01\Source\Repos\DentalClinic\DentalClinic\DentalClinic\DentalClinic.accdb
-        
-        SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "Dentista");
+        //Data Source=OPENLAB-MKT-01;Integrated Security=True
+
+        SQLLib sQuery = new SQLLib("OPENLAB-MKT-01", "Dentista");
         OLib oQuery = new OLib(@"Microsoft.ACE.OLEDB.12.0;", @"C:\Users\openlab-mkt-01\Source\Repos\DentalClinic\DentalClinic\DentalClinic\DentalClinic.accdb");
         public frmCLI()
         {
