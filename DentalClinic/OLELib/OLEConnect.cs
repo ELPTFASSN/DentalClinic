@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace OLELib
 {
@@ -20,10 +21,41 @@ namespace OLELib
             get { return dataProvider; }
             set { dataProvider = value; }
         }
-
+        
+        /// <summary>
+        /// OLEDB connection string
+        /// </summary>
+        /// <returns></returns>
         public string ConnectString()
         {
             return string.Concat("Provider=", DataProvider, "Data Source=", DataSource);
         }
+
+        /// <summary>
+        /// OLEConnect constructor recursive
+        /// </summary>
+        /// <param name="connector"></param>
+        public OLEConnect(OLEConnect connector)
+        {
+            DataProvider = connector.DataProvider;
+            DataSource = connector.DataSource;
+        }
+
+        /// <summary>
+        /// OLEConnect constructor with parameters
+        /// </summary>
+        /// <param name="_DataProvider"></param>
+        /// <param name="_DataSource"></param>
+        public OLEConnect(string _DataProvider, string _DataSource)
+        {
+            DataProvider = _DataProvider;
+            DataSource = _DataSource;
+        }
+
+        /// <summary>
+        /// OLEConnect default constructor
+        /// </summary>
+        public OLEConnect()
+        { }
     }
 }

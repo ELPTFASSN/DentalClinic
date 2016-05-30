@@ -68,6 +68,7 @@
             this.btnOLEExec.TabIndex = 3;
             this.btnOLEExec.Text = "OLE Exec";
             this.btnOLEExec.UseVisualStyleBackColor = true;
+            this.btnOLEExec.Click += new System.EventHandler(this.btnOLEExec_Click);
             // 
             // frmCLI
             // 

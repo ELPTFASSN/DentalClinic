@@ -21,6 +21,11 @@ namespace SQLib
             get { return databaseName; }
             set { databaseName = value; }
         }
+
+        /// <summary>
+        /// SQL connection string
+        /// </summary>
+        /// <returns></returns>
         public string ConnectString()
         {
             return string.Concat("Data Source=", ServerName, ";Initial Catalog=", DatabaseName, ";Integrated Security=True");
@@ -37,6 +42,10 @@ namespace SQLib
             DatabaseName = _DatabaseName;
         }
 
+        /// <summary>
+        /// SQLConnect constructor recursive
+        /// </summary>
+        /// <param name="connector"></param>
         public SQLConnect(SQLConnect connector)
         {
             DatabaseName = connector.DatabaseName;

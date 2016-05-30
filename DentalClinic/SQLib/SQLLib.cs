@@ -7,7 +7,6 @@ using SQLib;
 using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
-using System.Data.OleDb;
 
 namespace SQLib
 {
@@ -42,9 +41,9 @@ namespace SQLib
         /// <summary>
         /// Execute command directly and display result to data grid view
         /// </summary>
-        /// <param name="selectCommand"></param>
+        /// <param name="sqlCommand"></param>
         /// <param name="targetDataGridView"></param>
-        public void CommandExec(string selectCommand, DataGridView targetDataGridView)
+        public void CommandExec(string sqlCommand, DataGridView targetDataGridView)
         {
             SqlConnection conn = new SqlConnection(ConnectString());
             SqlCommand cmd = new SqlCommand(Command, conn);
@@ -53,7 +52,7 @@ namespace SQLib
             try
             {
                 cmd.ExecuteNonQuery();
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(selectCommand, conn);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand, conn);
                 DataSet dataSet = new DataSet();
                 dataAdapter.Fill(dataSet);
 
@@ -72,18 +71,18 @@ namespace SQLib
         /// <summary>
         /// Execute command from textbox and display result to data grid view
         /// </summary>
-        /// <param name="selectCommandFromTextBox"></param>
+        /// <param name="sqlCommandFromTextBox"></param>
         /// <param name="targetDataGridView"></param>
         /// 
-        public void CommandExec(TextBox selectCommandFromTextBox, DataGridView targetDataGridView)
+        public void CommandExec(TextBox sqlCommandFromTextBox, DataGridView targetDataGridView)
         {
             SqlConnection conn = new SqlConnection(ConnectString());
-            SqlCommand cmd = new SqlCommand(selectCommandFromTextBox.Text, conn);
+            SqlCommand cmd = new SqlCommand(sqlCommandFromTextBox.Text, conn);
             conn.Open();
             try
             {
                 cmd.ExecuteNonQuery();
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(selectCommandFromTextBox.Text, conn);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommandFromTextBox.Text, conn);
                 DataSet dataSet = new DataSet();
                 dataAdapter.Fill(dataSet);
 

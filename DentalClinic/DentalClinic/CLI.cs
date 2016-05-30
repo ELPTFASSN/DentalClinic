@@ -6,13 +6,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.OleDb;
+using System.Data.SqlClient;
+using OLELib;
 using SQLib;
 
 namespace DentalClinic
 {
     public partial class frmCLI : Form
     {
+        //Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\openlab-mkt-01\Source\Repos\DentalClinic\DentalClinic\DentalClinic\DentalClinic.accdb
+        
         SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "Dentista");
+        OLib oQuery = new OLib(@"Microsoft.ACE.OLEDB.12.0;", @"C:\Users\openlab-mkt-01\Source\Repos\DentalClinic\DentalClinic\DentalClinic\DentalClinic.accdb");
         public frmCLI()
         {
             InitializeComponent();
@@ -35,6 +41,11 @@ namespace DentalClinic
         private void btnSQLExec_Click(object sender, EventArgs e)
         {
             sQuery.CommandExec(txtCommand, dbGrid);
+        }
+
+        private void btnOLEExec_Click(object sender, EventArgs e)
+        {
+            oQuery.CommandExec(txtCommand, dbGrid);
         }
     }
 }
