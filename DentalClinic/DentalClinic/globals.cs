@@ -8,7 +8,13 @@ namespace DentalClinic
 {
     class globals
     {
-        public static void initializeDevNames(Label targetDevName, Label targetDevPosition, PictureBox targetDevPicture)
+        /// <summary>
+        /// Displays developer information in aboutbox
+        /// </summary>
+        /// <param name="targetDevName"></param>
+        /// <param name="targetDevPosition"></param>
+        /// <param name="targetDevPicture"></param>
+        public static void displayDevInfo(Label targetDevName, Label targetDevPosition, PictureBox targetDevPicture)
         {
             if (targetDevName.Text.Contains("dev 1"))
             {

@@ -29,10 +29,10 @@ namespace DentalClinic
 
         private void frmAbout_Load(object sender, EventArgs e)
         {
-            globals.initializeDevNames(lblDev1Name, lblDev1Position, imgDev1);
-            globals.initializeDevNames(lblDev2Name, lblDev2Position, imgDev2);
-            globals.initializeDevNames(lblDev3Name, lblDev3Position, imgDev3);
-            globals.initializeDevNames(lblDev4Name, lblDev4Position, imgDev4);
+            globals.displayDevInfo(lblDev1Name, lblDev1Position, imgDev1);
+            globals.displayDevInfo(lblDev2Name, lblDev2Position, imgDev2);
+            globals.displayDevInfo(lblDev3Name, lblDev3Position, imgDev3);
+            globals.displayDevInfo(lblDev4Name, lblDev4Position, imgDev4);
         }
     }
 }
