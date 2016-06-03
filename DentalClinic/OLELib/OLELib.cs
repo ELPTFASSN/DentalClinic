@@ -51,7 +51,8 @@ namespace OLELib
         {
             string ConnStr = ConnectString();
             OleDbConnection conn = new OleDbConnection(ConnStr);
-            
+
+
             conn.Open();
             OleDbCommand cmd = new OleDbCommand(oleCommandFromTextBox.Text, conn);
             OleDbDataReader objReader;
