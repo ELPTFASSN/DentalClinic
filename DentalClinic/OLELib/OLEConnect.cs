@@ -28,7 +28,7 @@ namespace OLELib
         /// <returns></returns>
         public string ConnectString()
         {
-            return string.Concat("Provider=", DataProvider, "Data Source=", DataSource);
+            return string.Concat("Provider=", DataProvider, ";Data Source=", DataSource);
         }
 
         /// <summary>

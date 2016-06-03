@@ -38,6 +38,18 @@ namespace SQLib
             set { sqlCommand = value; }
         }
 
+        public string ServName
+        {
+            get { return ServerName; }
+            set { ServerName = value; }
+        }
+
+        public string DataName
+        {
+            get { return DatabaseName; }
+            set { DatabaseName = value; }
+        }
+
         /// <summary>
         /// Execute command directly and display result to data grid view
         /// </summary>
@@ -60,7 +72,7 @@ namespace SQLib
             }
             catch (Exception err1)
             {
-                MessageBox.Show(err1.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(err1.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -90,7 +102,7 @@ namespace SQLib
             }
             catch (Exception err2)
             {
-                MessageBox.Show(err2.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(err2.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

@@ -8,6 +8,19 @@ namespace DentalClinic
 {
     class globals
     {
+        private static string dataProvider;
+        public static string DataProvider
+        {
+            get { return dataProvider; }
+            set { dataProvider = value; }
+        }
+        private static string dataSource;
+        public static string DataSource
+        {
+            get { return dataSource; }
+            set { dataSource = value; }
+        }
+
         /// <summary>
         /// Displays developer information in aboutbox
         /// </summary>

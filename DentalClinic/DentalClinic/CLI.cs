@@ -17,8 +17,10 @@ namespace DentalClinic
     {
         //Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\openlab-mkt-01\Source\Repos\DentalClinic\DentalClinic\DentalClinic\DentalClinic.accdb
         //Data Source=OPENLAB-MKT-01;Integrated Security=True
+        //SQLLib sQuery = new SQLLib("OPENLAB-MKT-01", "Dentista");
+        //OLib oQuery = new OLib(@"Microsoft.ACE.OLEDB.12.0;", @"C:\Users\openlab-mkt-01\Source\Repos\DentalClinic\DentalClinic\DentalClinic\DentalClinic.accdb");
 
-        SQLLib sQuery = new SQLLib("OPENLAB-MKT-01", "Dentista");
+        SQLLib sQuery;
         OLib oQuery = new OLib(@"Microsoft.ACE.OLEDB.12.0;", @"C:\Users\openlab-mkt-01\Source\Repos\DentalClinic\DentalClinic\DentalClinic\DentalClinic.accdb");
         public frmCLI()
         {
@@ -41,12 +43,25 @@ namespace DentalClinic
 
         private void btnSQLExec_Click(object sender, EventArgs e)
         {
-            sQuery.CommandExec(txtCommand, dbGrid);
+            //MessageBox.Show(sQuery.ConnectString());
+            sQuery = new SQLLib(txtDataProvider.Text, txtDataSource.Text);
+            //sQuery.CommandExec(txtCommand, dbGrid);
+            sQuery.CommandExec("insert into users values('102','Abunda','Boy')", dbGrid);
         }
 
         private void btnOLEExec_Click(object sender, EventArgs e)
         {
-            oQuery.CommandExec(txtCommand, dbGrid);
+            oQuery.CommandExec(txtCommand.Text, dbGrid);
+        }
+
+        private void txtDataProvider_TextChanged(object sender, EventArgs e)
+        {
+            globals.DataProvider = txtDataProvider.Text;
+        }
+
+        private void txtDataSource_TextChanged(object sender, EventArgs e)
+        {
+            globals.DataSource = txtDataSource.Text;
         }
     }
 }
