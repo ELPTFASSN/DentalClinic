@@ -61,21 +61,31 @@ namespace DentalClinic {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Francesca Mandadero.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static string dev1Name {
+        internal static System.Drawing.Bitmap aloba {
             get {
-                return ResourceManager.GetString("dev1Name", resourceCulture);
+                object obj = ResourceManager.GetObject("aloba", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dev1Picture {
+        internal static System.Drawing.Bitmap benigno {
             get {
-                object obj = ResourceManager.GetObject("dev1Picture", resourceCulture);
+                object obj = ResourceManager.GetObject("benigno", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Marie Santiago.
+        /// </summary>
+        internal static string dev1Name {
+            get {
+                return ResourceManager.GetString("dev1Name", resourceCulture);
             }
         }
         
@@ -89,21 +99,11 @@ namespace DentalClinic {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Anton Aloba.
+        ///   Looks up a localized string similar to Alfred Philip Benigno.
         /// </summary>
         internal static string dev2Name {
             get {
                 return ResourceManager.GetString("dev2Name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap dev2Picture {
-            get {
-                object obj = ResourceManager.GetObject("dev2Picture", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -117,21 +117,11 @@ namespace DentalClinic {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Marie Santiago.
+        ///   Looks up a localized string similar to Francesca Mandadero.
         /// </summary>
         internal static string dev3Name {
             get {
                 return ResourceManager.GetString("dev3Name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap dev3Picture {
-            get {
-                object obj = ResourceManager.GetObject("dev3Picture", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -145,21 +135,11 @@ namespace DentalClinic {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alfred Philip Benigno.
+        ///   Looks up a localized string similar to Anton Aloba.
         /// </summary>
         internal static string dev4Name {
             get {
                 return ResourceManager.GetString("dev4Name", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap dev4Picture {
-            get {
-                object obj = ResourceManager.GetObject("dev4Picture", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -169,6 +149,26 @@ namespace DentalClinic {
         internal static string dev4Position {
             get {
                 return ResourceManager.GetString("dev4Position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mandadero {
+            get {
+                object obj = ResourceManager.GetObject("mandadero", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap santiago {
+            get {
+                object obj = ResourceManager.GetObject("santiago", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

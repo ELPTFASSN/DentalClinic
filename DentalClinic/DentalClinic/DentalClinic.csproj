@@ -126,10 +126,10 @@
     <Content Include="DentalClinic.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\dev4Picture.jpg" />
-    <None Include="Resources\dev3Picture.jpg" />
-    <None Include="Resources\dev2Picture.jpg" />
-    <None Include="Resources\dev1Picture.jpg" />
+    <None Include="Resources\mandadero.png" />
+    <None Include="Resources\aloba.png" />
+    <None Include="Resources\benigno.png" />
+    <None Include="Resources\santiago.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

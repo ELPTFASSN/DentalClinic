@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuDebug = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDebug = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,20 +50,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(328, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // mnuAbout
-            // 
-            this.mnuAbout.Name = "mnuAbout";
-            this.mnuAbout.Size = new System.Drawing.Size(52, 20);
-            this.mnuAbout.Text = "&About";
-            this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
-            // 
-            // mnuDebug
-            // 
-            this.mnuDebug.Name = "mnuDebug";
-            this.mnuDebug.Size = new System.Drawing.Size(54, 20);
-            this.mnuDebug.Text = "Debug";
-            this.mnuDebug.Click += new System.EventHandler(this.mnuDebug_Click);
             // 
             // mnuFile
             // 
@@ -82,6 +70,22 @@
             this.mnuFileExit.Name = "mnuFileExit";
             this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
             this.mnuFileExit.Text = "E&xit";
+            this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
+            // 
+            // mnuAbout
+            // 
+            this.mnuAbout.Name = "mnuAbout";
+            this.mnuAbout.Size = new System.Drawing.Size(52, 20);
+            this.mnuAbout.Text = "&About";
+            this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
+            // 
+            // mnuDebug
+            // 
+            this.mnuDebug.Name = "mnuDebug";
+            this.mnuDebug.Size = new System.Drawing.Size(54, 20);
+            this.mnuDebug.Text = "Debug";
+            this.mnuDebug.ToolTipText = "Debug database";
+            this.mnuDebug.Click += new System.EventHandler(this.mnuDebug_Click);
             // 
             // frmMain
             // 
@@ -109,6 +113,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuFile;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem mnuFileExit;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

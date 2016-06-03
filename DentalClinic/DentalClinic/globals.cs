@@ -20,25 +20,25 @@ namespace DentalClinic
             {
                 targetDevName.Text = ProjResource.dev1Name;
                 targetDevPosition.Text = ProjResource.dev1Position;
-                targetDevPicture.Image = ProjResource.dev1Picture;
+                targetDevPicture.Image = ProjResource.santiago;
             }
             else if (targetDevName.Text.Contains("dev 2"))
             {
                 targetDevName.Text = ProjResource.dev2Name;
                 targetDevPosition.Text = ProjResource.dev2Position;
-                targetDevPicture.Image = ProjResource.dev1Picture;
+                targetDevPicture.Image = ProjResource.benigno;
             }
             else if (targetDevName.Text.Contains("dev 3"))
             {
                 targetDevName.Text = ProjResource.dev3Name;
                 targetDevPosition.Text = ProjResource.dev3Position;
-                targetDevPicture.Image = ProjResource.dev1Picture;
+                targetDevPicture.Image = ProjResource.mandadero;
             }
             else if (targetDevName.Text.Contains("dev 4"))
             {
                 targetDevName.Text = ProjResource.dev4Name;
                 targetDevPosition.Text = ProjResource.dev4Position;
-                targetDevPicture.Image = ProjResource.dev1Picture;
+                targetDevPicture.Image = ProjResource.aloba;
             }
         }
     }
