@@ -17,7 +17,7 @@ namespace DentalClinic
     {
         //Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Family\Source\Repos\DentalClinic\DentalClinic\DentalClinic\DentalClinic.accdb
         //SQLLib queri = new SQLLib("Microsoft.ACE.OLEDB.12.0;", "DentalClinic.accdb");
-        SQLLib sQuery = new SQLLib("MKT106-SC-19", "DentalClinic");
+        SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
 
         public frmMain()
         {
@@ -66,18 +66,17 @@ namespace DentalClinic
             Signup sign = new Signup();
             sign.ShowDialog();
         }
- 
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            SqlConnection connLogin = new SqlConnection(sQuery.ConnectString());
+            connLogin.Open();
+            sQuery.Command = @"select * from Employee where Employee_UserName = '" + txtEmpUser.Text + "' AND Employee_Password = '" + txtEmpPass.Text + "' AND Employee_Restriction = '" + cboEmpRestriction.Text + "'";
             try
-            {
-                SqlConnection connLogin = new SqlConnection(sQuery.ConnectString());
-                connLogin.Open();
-
-                string sqlSelectStatement2 = @"select * from Employee where Employee_UserName = '" + txtEmpUser.Text + "' AND Employee_Password = '" + txtEmpPass.Text + "' AND Employee_Restriction = '" + cboEmpRestriction.Text + "'";
-                SqlCommand cmdTxt2 = new SqlCommand(sqlSelectStatement2, connLogin);
-                SqlDataReader dtrClientAcc2 = cmdTxt2.ExecuteReader();
-                if (dtrClientAcc2.HasRows)
+            {    
+                SqlCommand cmd = new SqlCommand(sQuery.Command, connLogin);
+                SqlDataReader dataReader = cmd.ExecuteReader();
+                if (dataReader.HasRows)
                 {
                     if (cboEmpRestriction.Text == "Administrator")
                     {
@@ -108,16 +107,15 @@ namespace DentalClinic
                     txtEmpPass.Clear();
                     return;
                 }
-
-                connLogin.Close();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-        }
+            finally
+            {
+                connLogin.Close();
+            }
         }
     }
-
+}

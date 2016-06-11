@@ -74,18 +74,18 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(111, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // signUpToolStripMenuItem
             // 
             this.signUpToolStripMenuItem.Name = "signUpToolStripMenuItem";
-            this.signUpToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.signUpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.signUpToolStripMenuItem.Text = "Sign up";
             // 
             // mnuFileExit
             // 
             this.mnuFileExit.Name = "mnuFileExit";
-            this.mnuFileExit.Size = new System.Drawing.Size(114, 22);
+            this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
             this.mnuFileExit.Text = "E&xit";
             this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
             // 
@@ -106,7 +106,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(191, 263);
+            this.btnLogin.Location = new System.Drawing.Point(218, 263);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 1;
@@ -116,7 +116,7 @@
             // 
             // btnSignup
             // 
-            this.btnSignup.Location = new System.Drawing.Point(287, 263);
+            this.btnSignup.Location = new System.Drawing.Point(322, 263);
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.Size = new System.Drawing.Size(75, 23);
             this.btnSignup.TabIndex = 2;
