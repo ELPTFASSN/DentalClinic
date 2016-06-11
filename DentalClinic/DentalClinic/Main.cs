@@ -16,12 +16,15 @@ namespace DentalClinic
     public partial class frmMain : Form
     {
         //Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Family\Source\Repos\DentalClinic\DentalClinic\DentalClinic\DentalClinic.accdb
-        SQLLib queri = new SQLLib("Microsoft.ACE.OLEDB.12.0;", "DentalClinic.accdb");
+        //SQLLib queri = new SQLLib("Microsoft.ACE.OLEDB.12.0;", "DentalClinic.accdb");
+        SQLLib sQuery = new SQLLib("MKT106-SC-19", "DentalClinic");
 
         public frmMain()
         {
             InitializeComponent();
         }
+
+        //string connString = @"Data Source=MKT106-SC-19;Initial Catalog=DentalClinic;Integrated Security=True";
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -56,5 +59,65 @@ namespace DentalClinic
         {
             this.Close();
         }
+
+        private void btnSignup_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Signup sign = new Signup();
+            sign.ShowDialog();
+        }
+ 
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection connLogin = new SqlConnection(sQuery.ConnectString());
+                connLogin.Open();
+
+                string sqlSelectStatement2 = @"select * from Employee where Employee_UserName = '" + txtEmpUser.Text + "' AND Employee_Password = '" + txtEmpPass.Text + "' AND Employee_Restriction = '" + cboEmpRestriction.Text + "'";
+                SqlCommand cmdTxt2 = new SqlCommand(sqlSelectStatement2, connLogin);
+                SqlDataReader dtrClientAcc2 = cmdTxt2.ExecuteReader();
+                if (dtrClientAcc2.HasRows)
+                {
+                    if (cboEmpRestriction.Text == "Administrator")
+                    {
+                        MessageBox.Show("Successfully Logged In", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
+                        WinForms.Dentist.Show();
+                        WinForms.Main.Hide();
+                    }
+                    else if (cboEmpRestriction.Text == "Dentist")
+                    {
+                        MessageBox.Show("Successfully Logged In", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
+                        WinForms.Dentist.Show();
+                        WinForms.Main.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Successfully Logged In", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.DialogResult = DialogResult.OK;
+                        WinForms.Employee.Show();
+                        WinForms.Main.Hide();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password!", "Invalid Entry", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEmpUser.Focus();
+                    txtEmpPass.Clear();
+                    return;
+                }
+
+                connLogin.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        }
     }
-}
+

@@ -48,5 +48,31 @@ namespace DentalClinic
                 return cli;
             }
         }
+
+        private static Form employee;
+        public static Form Employee
+        {
+            get
+            {
+                if (employee == null)
+                {
+                    employee = new frmEmployee();
+                }
+                return employee;
+            }
+        }
+
+        private static Form dentist;
+        public static Form Dentist
+        {
+            get
+            {
+                if (dentist == null)
+                {
+                    dentist = new frmDentist();
+                }
+                return dentist;
+            }
+        }
     }
 }
