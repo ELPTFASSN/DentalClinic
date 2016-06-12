@@ -74,18 +74,18 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(111, 6);
             // 
             // signUpToolStripMenuItem
             // 
             this.signUpToolStripMenuItem.Name = "signUpToolStripMenuItem";
-            this.signUpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.signUpToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.signUpToolStripMenuItem.Text = "Sign up";
             // 
             // mnuFileExit
             // 
             this.mnuFileExit.Name = "mnuFileExit";
-            this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileExit.Size = new System.Drawing.Size(114, 22);
             this.mnuFileExit.Text = "E&xit";
             this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
             // 
@@ -98,6 +98,7 @@
             // 
             // mnuDebug
             // 
+            this.mnuDebug.Enabled = false;
             this.mnuDebug.Name = "mnuDebug";
             this.mnuDebug.Size = new System.Drawing.Size(54, 20);
             this.mnuDebug.Text = "Debug";
@@ -206,6 +207,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.Text = "Dental Clinic";
+            this.Activated += new System.EventHandler(this.frmMain_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);

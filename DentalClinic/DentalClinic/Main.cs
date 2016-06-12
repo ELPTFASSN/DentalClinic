@@ -70,10 +70,10 @@ namespace DentalClinic
         private void btnLogin_Click(object sender, EventArgs e)
         {
             SqlConnection connLogin = new SqlConnection(sQuery.ConnectString());
-            connLogin.Open();
-            sQuery.Command = @"select * from Employee where Employee_UserName = '" + txtEmpUser.Text + "' AND Employee_Password = '" + txtEmpPass.Text + "' AND Employee_Restriction = '" + cboEmpRestriction.Text + "'";
+            sQuery.Command = @"select * from Staff where S_Username = '" + txtEmpUser.Text + "' AND S_Password = '" + txtEmpPass.Text + "' AND S_Restriction = '" + cboEmpRestriction.Text + "'";
             try
-            {    
+            {
+                connLogin.Open();
                 SqlCommand cmd = new SqlCommand(sQuery.Command, connLogin);
                 SqlDataReader dataReader = cmd.ExecuteReader();
                 if (dataReader.HasRows)
@@ -83,7 +83,8 @@ namespace DentalClinic
                         MessageBox.Show("Successfully Logged In", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
                         WinForms.Dentist.Show();
-                        WinForms.Main.Hide();
+                        globals.setCredentials(txtEmpUser.Text,txtEmpPass.Text,cboEmpRestriction.Text);
+                        WinForms.Main.Activate();
                     }
                     else if (cboEmpRestriction.Text == "Dentist")
                     {
@@ -91,6 +92,7 @@ namespace DentalClinic
                         this.DialogResult = DialogResult.OK;
                         WinForms.Dentist.Show();
                         WinForms.Main.Hide();
+                        globals.setCredentials(txtEmpUser.Text, txtEmpPass.Text, cboEmpRestriction.Text);
                     }
                     else
                     {
@@ -98,6 +100,7 @@ namespace DentalClinic
                         this.DialogResult = DialogResult.OK;
                         WinForms.Employee.Show();
                         WinForms.Main.Hide();
+                        globals.setCredentials(txtEmpUser.Text, txtEmpPass.Text, cboEmpRestriction.Text);
                     }
                 }
                 else
@@ -116,6 +119,11 @@ namespace DentalClinic
             {
                 connLogin.Close();
             }
+        }
+
+        private void frmMain_Activated(object sender, EventArgs e)
+        {
+            mnuDebug.Enabled = globals.isAdministrator();
         }
     }
 }

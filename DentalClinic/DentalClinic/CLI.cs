@@ -38,15 +38,15 @@ namespace DentalClinic
 
         private void frmCLI_Load(object sender, EventArgs e)
         {
-            
+            txtDataProvider.Text = globals.DataProvider;
+            txtDataSource.Text = globals.DataSource;
         }
 
         private void btnSQLExec_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(sQuery.ConnectString());
             sQuery = new SQLLib(txtDataProvider.Text, txtDataSource.Text);
-            //sQuery.CommandExec(txtCommand, dbGrid);
-            sQuery.CommandExec("insert into users values('102','Abunda','Boy')", dbGrid);
+            sQuery.CommandExec(txtCommand, dbGrid);
         }
 
         private void btnOLEExec_Click(object sender, EventArgs e)
