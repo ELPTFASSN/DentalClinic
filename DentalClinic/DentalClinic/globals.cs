@@ -170,5 +170,10 @@ namespace DentalClinic
             Password = _password;
             Restriction = _restriction;
         }
+
+        public static void showCredentials(ToolStripStatusLabel targetStatusLabel)
+        {
+
+        }
     }
 }
