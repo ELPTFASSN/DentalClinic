@@ -7,35 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using SQLib;
+using OLELib;
 
 namespace DentalClinic
 {
     public partial class Signup : Form
     {
+        SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
         public Signup()
         {
             InitializeComponent();
         }
 
-
-
-        string connString = @"Data Source=MKT106-SC-19;Initial Catalog=DentalClinic;Integrated Security=True";
-
-
-
-
-        private void Signup_Load(object sender, EventArgs e)
-        {
-           
-        }
+        //string connString = @"Data Source=MKT106-SC-19;Initial Catalog=DentalClinic;Integrated Security=True";
 
         private void btnSignup_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(connString);
+            SqlConnection conn = new SqlConnection(sQuery.ConnectString());
             if (txtEmpCode.Text != "" && txtEmpFName.Text != "" && txtEmpLName.Text != "" && txtEmpAge.Text != "" && txtEmpContact.Text != "" && txtEmpUser.Text != "" && txtEmpPass.Text != "" && cboEmpRestriction.Text != "")
             {
-                con.Open();
-                SqlCommand SDA = new SqlCommand("INSERT INTO EMPLOYEE VALUES (" + txtEmpCode.Text + " , '" + txtEmpFName.Text + "' , '" + txtEmpLName.Text + "' , '" + txtEmpAge.Text + "' , " + txtEmpContact.Text + " , '" + txtEmpUser.Text + "' ,'" + txtEmpPass.Text + "' ,'" + cboEmpRestriction.Text + "')", con);
+                conn.Open();
+                sQuery.Command = "INSERT INTO EMPLOYEE VALUES (" + txtEmpCode.Text + " , '" + txtEmpFName.Text + "' , '" + txtEmpLName.Text + "' , '" + txtEmpAge.Text + "' , " + txtEmpContact.Text + " , '" + txtEmpUser.Text + "' ,'" + txtEmpPass.Text + "' ,'" + cboEmpRestriction.Text + "')";
+                SqlCommand SDA = new SqlCommand(sQuery.Command, conn);
                 try
                 {
                     SDA.ExecuteNonQuery();
@@ -54,11 +48,24 @@ namespace DentalClinic
                 {
                     MessageBox.Show("Invalid Code!");
                 }
-                con.Close();
+                finally
+                {
+                    conn.Close();
+                }
             }
             else
             {
                 MessageBox.Show("Missing Values");
+            }
+        }
+
+        private void Signup_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                WinForms.Main.Show();
+                WinForms.SignUp.Hide();
             }
         }
     }

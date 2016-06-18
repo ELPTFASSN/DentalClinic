@@ -74,5 +74,18 @@ namespace DentalClinic
                 return dentist;
             }
         }
+
+        private static Form signup;
+        public static Form SignUp
+        {
+            get
+            {
+                if (signup == null)
+                {
+                    signup = new Signup();
+                }
+                return signup;
+            }
+        }
     }
 }
