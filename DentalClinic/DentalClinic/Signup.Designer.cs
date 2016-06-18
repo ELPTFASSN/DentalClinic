@@ -31,10 +31,8 @@
             this.btnSignup = new System.Windows.Forms.Button();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,7 +54,7 @@
             // 
             // btnSignup
             // 
-            this.btnSignup.Location = new System.Drawing.Point(120, 308);
+            this.btnSignup.Location = new System.Drawing.Point(122, 291);
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.Size = new System.Drawing.Size(75, 23);
             this.btnSignup.TabIndex = 0;
@@ -66,7 +64,7 @@
             // 
             // btnClearAll
             // 
-            this.btnClearAll.Location = new System.Drawing.Point(211, 308);
+            this.btnClearAll.Location = new System.Drawing.Point(213, 291);
             this.btnClearAll.Name = "btnClearAll";
             this.btnClearAll.Size = new System.Drawing.Size(75, 23);
             this.btnClearAll.TabIndex = 1;
@@ -76,44 +74,32 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.fileToolStripMenuItem});
+            this.mnuFile});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(436, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // toolStripMenuItem1
+            // mnuFile
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
+            this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFileLogin});
+            this.mnuFile.Name = "mnuFile";
+            this.mnuFile.Size = new System.Drawing.Size(37, 20);
+            this.mnuFile.Text = "File";
             // 
-            // fileToolStripMenuItem
+            // mnuFileLogin
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loginToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // loginToolStripMenuItem
-            // 
-            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-            this.loginToolStripMenuItem.Text = "Login";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.mnuFileLogin.Name = "mnuFileLogin";
+            this.mnuFileLogin.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileLogin.Text = "Login";
+            this.mnuFileLogin.Click += new System.EventHandler(this.mnuFileLogin_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(105, 258);
+            this.label1.Location = new System.Drawing.Point(107, 241);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 3;
@@ -122,7 +108,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(108, 101);
+            this.label2.Location = new System.Drawing.Point(110, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 4;
@@ -131,7 +117,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(107, 127);
+            this.label3.Location = new System.Drawing.Point(109, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 5;
@@ -140,7 +126,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(109, 153);
+            this.label4.Location = new System.Drawing.Point(111, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(26, 13);
             this.label4.TabIndex = 6;
@@ -149,7 +135,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(107, 179);
+            this.label5.Location = new System.Drawing.Point(109, 162);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 7;
@@ -158,7 +144,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(105, 205);
+            this.label6.Location = new System.Drawing.Point(107, 188);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 8;
@@ -167,7 +153,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(105, 231);
+            this.label7.Location = new System.Drawing.Point(107, 214);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 9;
@@ -175,7 +161,7 @@
             // 
             // txtEmpPass
             // 
-            this.txtEmpPass.Location = new System.Drawing.Point(196, 224);
+            this.txtEmpPass.Location = new System.Drawing.Point(198, 207);
             this.txtEmpPass.Name = "txtEmpPass";
             this.txtEmpPass.PasswordChar = '*';
             this.txtEmpPass.Size = new System.Drawing.Size(117, 20);
@@ -183,35 +169,35 @@
             // 
             // txtEmpUser
             // 
-            this.txtEmpUser.Location = new System.Drawing.Point(196, 198);
+            this.txtEmpUser.Location = new System.Drawing.Point(198, 181);
             this.txtEmpUser.Name = "txtEmpUser";
             this.txtEmpUser.Size = new System.Drawing.Size(117, 20);
             this.txtEmpUser.TabIndex = 11;
             // 
             // txtEmpContact
             // 
-            this.txtEmpContact.Location = new System.Drawing.Point(196, 172);
+            this.txtEmpContact.Location = new System.Drawing.Point(198, 155);
             this.txtEmpContact.Name = "txtEmpContact";
             this.txtEmpContact.Size = new System.Drawing.Size(117, 20);
             this.txtEmpContact.TabIndex = 12;
             // 
             // txtEmpAge
             // 
-            this.txtEmpAge.Location = new System.Drawing.Point(196, 146);
+            this.txtEmpAge.Location = new System.Drawing.Point(198, 129);
             this.txtEmpAge.Name = "txtEmpAge";
             this.txtEmpAge.Size = new System.Drawing.Size(117, 20);
             this.txtEmpAge.TabIndex = 13;
             // 
             // txtEmpLName
             // 
-            this.txtEmpLName.Location = new System.Drawing.Point(196, 120);
+            this.txtEmpLName.Location = new System.Drawing.Point(198, 103);
             this.txtEmpLName.Name = "txtEmpLName";
             this.txtEmpLName.Size = new System.Drawing.Size(117, 20);
             this.txtEmpLName.TabIndex = 14;
             // 
             // txtEmpFName
             // 
-            this.txtEmpFName.Location = new System.Drawing.Point(196, 94);
+            this.txtEmpFName.Location = new System.Drawing.Point(198, 77);
             this.txtEmpFName.Name = "txtEmpFName";
             this.txtEmpFName.Size = new System.Drawing.Size(117, 20);
             this.txtEmpFName.TabIndex = 15;
@@ -223,14 +209,14 @@
             "Dentist",
             "Assistant",
             "Administrator"});
-            this.cboEmpRestriction.Location = new System.Drawing.Point(196, 250);
+            this.cboEmpRestriction.Location = new System.Drawing.Point(198, 233);
             this.cboEmpRestriction.Name = "cboEmpRestriction";
             this.cboEmpRestriction.Size = new System.Drawing.Size(117, 21);
             this.cboEmpRestriction.TabIndex = 16;
             // 
             // txtEmpCode
             // 
-            this.txtEmpCode.Location = new System.Drawing.Point(196, 68);
+            this.txtEmpCode.Location = new System.Drawing.Point(198, 51);
             this.txtEmpCode.Name = "txtEmpCode";
             this.txtEmpCode.Size = new System.Drawing.Size(117, 20);
             this.txtEmpCode.TabIndex = 18;
@@ -238,7 +224,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(109, 75);
+            this.label8.Location = new System.Drawing.Point(111, 58);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 13);
             this.label8.TabIndex = 17;
@@ -271,7 +257,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Signup";
             this.Text = "Sign up";
-            this.Load += new System.EventHandler(this.Signup_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Signup_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -284,10 +270,8 @@
         private System.Windows.Forms.Button btnSignup;
         private System.Windows.Forms.Button btnClearAll;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuFile;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileLogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

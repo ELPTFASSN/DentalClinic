@@ -76,7 +76,7 @@ namespace DentalClinic
             sQuery.Command = @"SELECT * FROM " + tableName + " WHERE " + primaryKeyField + " = '" + primaryKeyValue + "'";
             bool result = false;
             string str1 = "", str2 = "";
-            str1 = getData(tableName, primaryKeyField, primaryKeyValue, targetFieldName);
+            str1 = sQuery.getData(tableName, primaryKeyField, primaryKeyValue, targetFieldName);
             str2 = stringToMatch;
             if (str1 == str2)
             {
@@ -87,40 +87,7 @@ namespace DentalClinic
             return result;
         }
 
-        /// <summary>
-        /// Gets a field value and returns as string
-        /// </summary>
-        /// <param name="tableName"></param>
-        /// <param name="primaryKeyField"></param>
-        /// <param name="primaryKeyValue"></param>
-        /// <param name="targetFieldName"></param>
-        /// <returns></returns>
-        public static string getData(string tableName, string primaryKeyField, string primaryKeyValue, string targetFieldName)
-        {
-            sQuery.Command = @"SELECT * FROM " + tableName + " WHERE " + primaryKeyField + " = '" + primaryKeyValue + "'";
-            string result = "";
-            SqlConnection conn = new SqlConnection(sQuery.ConnectString());
-            SqlCommand command = new SqlCommand(sQuery.Command, conn);
-            conn.Open();
-            try
-            {
-                SqlDataReader read = command.ExecuteReader();
-                while (read.Read())
-                {
-                    result = (read[targetFieldName.ToString()].ToString());
-                }
-                read.Close();
-            }
-            catch (Exception errGet)
-            {
-                MessageBox.Show(errGet.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
-            return result;
-        }
+        
 
         public static bool isAdministrator()
         {
@@ -169,6 +136,42 @@ namespace DentalClinic
             Username = _username;
             Password = _password;
             Restriction = _restriction;
+        }
+
+        /// <summary>
+        /// Add Schedule
+        /// </summary>
+        /// <param name="scheduleID"></param>
+        /// <param name="date"></param>
+        /// <param name="time"></param>
+        /// <param name="description"></param>
+        /// <param name="outputGridView"></param>
+        public static void addSchedule(TextBox scheduleID, DateTimePicker date, DateTimePicker time,TextBox description, DataGridView outputGridView)
+        {
+            sQuery.Command = "insert into Schedule values('" + scheduleID.Text + "','" + date.Value + "','" + time.Value + "','" + description.Text + "')";
+            sQuery.CommandExec(sQuery.Command.ToString(), outputGridView);
+            sQuery.CommandExec("select * from Schedule", outputGridView);
+        }
+
+        /// <summary>
+        /// Remove Schedule
+        /// </summary>
+        /// <param name="outputGridView"></param>
+        public static void removeSchedule(DataGridView outputGridView)
+        {
+            for (int x = 0; x <= 3; x++) 
+            {
+                outputGridView.SelectedCells[0].OwningRow.Cells[x].Selected = true;
+            }
+            if (MessageBox.Show("This will delete entire row. Continue?","Confirm Delete",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                string pKeyValue = outputGridView.SelectedCells[0].OwningRow.Cells[0].Value.ToString();
+                string pKeyName = outputGridView.SelectedCells[0].OwningRow.Cells[0].OwningColumn.Name;
+
+                sQuery.Command = "delete from Schedule where " + pKeyName + " = " + pKeyValue;
+                sQuery.CommandExec(sQuery.Command, outputGridView);
+                sQuery.CommandExec("select * from Schedule", outputGridView);
+            }
         }
     }
 }

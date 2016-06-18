@@ -17,8 +17,9 @@ namespace DentalClinic
     {
         //Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Family\Source\Repos\DentalClinic\DentalClinic\DentalClinic\DentalClinic.accdb
         //SQLLib queri = new SQLLib("Microsoft.ACE.OLEDB.12.0;", "DentalClinic.accdb");
+        
+        //SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
         SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
-
         public frmMain()
         {
             InitializeComponent();
@@ -62,9 +63,8 @@ namespace DentalClinic
 
         private void btnSignup_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Signup sign = new Signup();
-            sign.ShowDialog();
+            WinForms.Main.Hide();
+            WinForms.SignUp.Show();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -82,9 +82,10 @@ namespace DentalClinic
                     {
                         MessageBox.Show("Successfully Logged In", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.DialogResult = DialogResult.OK;
-                        WinForms.Dentist.Show();
+                        WinForms.Admin.Show();
+                        WinForms.Main.Hide();
                         globals.setCredentials(txtEmpUser.Text,txtEmpPass.Text,cboEmpRestriction.Text);
-                        WinForms.Main.Activate();
+                    
                     }
                     else if (cboEmpRestriction.Text == "Dentist")
                     {
@@ -123,7 +124,10 @@ namespace DentalClinic
 
         private void frmMain_Activated(object sender, EventArgs e)
         {
-            mnuDebug.Enabled = globals.isAdministrator();
+            if (globals.Restriction != null)
+            {
+                mnuDebug.Enabled = globals.isAdministrator();
+            }
         }
     }
 }

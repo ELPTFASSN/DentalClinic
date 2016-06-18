@@ -74,5 +74,56 @@ namespace DentalClinic
                 return dentist;
             }
         }
+
+        private static Form signup;
+        public static Form SignUp
+        {
+            get
+            {
+                if (signup == null)
+                {
+                    signup = new Signup();
+                }
+                return signup;
+            }
+        }
+
+        private static Form admin;
+        public static Form Admin
+        {
+            get
+            {
+                if (admin == null)
+                {
+                    admin = new Admin();
+                }
+                return admin;
+            }
+        }
+        private static Form staff;
+        public static Form Staff
+        {
+            get
+            {
+                if (staff == null)
+                {
+                    staff = new Staff();
+                }
+                return staff;
+            }
+        }
+
+        private static Form inventory;
+        public static Form Inventory
+        {
+            get
+            {
+                if (inventory == null)
+                {
+                    inventory = new Inventory();
+                }
+                return inventory;
+            }
+        }
     }
 }

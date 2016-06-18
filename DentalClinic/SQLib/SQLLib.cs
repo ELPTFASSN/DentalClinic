@@ -58,7 +58,7 @@ namespace SQLib
         public void CommandExec(string sqlCommand, DataGridView targetDataGridView)
         {
             SqlConnection conn = new SqlConnection(ConnectString());
-            SqlCommand cmd = new SqlCommand(Command, conn);
+            SqlCommand cmd = new SqlCommand(sqlCommand, conn);
             conn.Open();
 
             try
@@ -108,6 +108,41 @@ namespace SQLib
             {
                 conn.Close();
             }
+        }
+
+        /// <summary>
+        /// Gets a field value and returns as string
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <param name="primaryKeyField"></param>
+        /// <param name="primaryKeyValue"></param>
+        /// <param name="targetFieldName"></param>
+        /// <returns></returns>
+        public string getData(string tableName, string primaryKeyField, string primaryKeyValue, string targetFieldName)
+        {
+            Command = @"SELECT " + targetFieldName + " from " + tableName + " where " + primaryKeyField + " = " + primaryKeyValue;
+            string result = "";
+            SqlConnection conn = new SqlConnection(ConnectString());
+            SqlCommand command = new SqlCommand(Command, conn);
+            conn.Open();
+            try
+            {
+                SqlDataReader read = command.ExecuteReader();
+                while (read.Read())
+                {
+                    result = (read[targetFieldName.ToString()].ToString());
+                }
+                read.Close();
+            }
+            catch (Exception errGet)
+            {
+                MessageBox.Show(errGet.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return result;
         }
     }
 }

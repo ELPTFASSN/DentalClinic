@@ -6,11 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using SQLib;
+using OLELib;
+using System.Data.SqlClient;
 
 namespace DentalClinic
 {
     public partial class frmDentist : Form
     {
+        SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
         public frmDentist()
         {
             InitializeComponent();
@@ -24,6 +28,16 @@ namespace DentalClinic
                 WinForms.Main.Show();
                 WinForms.Dentist.Hide();
             }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            globals.addSchedule(txtSchedID, dtDate, dtTime, txtDescription, datagridSched);
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            globals.removeSchedule(datagridSched);
         }
     }
 }

@@ -188,6 +188,7 @@
             this.cboEmpRestriction.Name = "cboEmpRestriction";
             this.cboEmpRestriction.Size = new System.Drawing.Size(152, 21);
             this.cboEmpRestriction.TabIndex = 9;
+            this.cboEmpRestriction.Text = "Administrator";
             // 
             // frmMain
             // 
@@ -209,7 +210,6 @@
             this.Text = "Dental Clinic";
             this.Activated += new System.EventHandler(this.frmMain_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
-            this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
