@@ -14,7 +14,11 @@ namespace DentalClinic
 {
     public partial class frmDentist : Form
     {
+        /// <summary>
+        /// Connection String
+        /// </summary>
         SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
+        //
         public frmDentist()
         {
             InitializeComponent();

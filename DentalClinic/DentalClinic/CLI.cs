@@ -21,7 +21,7 @@ namespace DentalClinic
         //OLib oQuery = new OLib(@"Microsoft.ACE.OLEDB.12.0;", @"C:\Users\openlab-mkt-01\Source\Repos\DentalClinic\DentalClinic\DentalClinic\DentalClinic.accdb");
 
         SQLLib sQuery;
-        OLib oQuery = new OLib(@"Microsoft.ACE.OLEDB.12.0;", @"C:\Users\openlab-mkt-01\Source\Repos\DentalClinic\DentalClinic\DentalClinic\DentalClinic.accdb");
+        OLib oQuery = new OLib("Microsoft.ACE.OLEDB.12.0", "DentalClinic.accdb");
         public frmCLI()
         {
             InitializeComponent();

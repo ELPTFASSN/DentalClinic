@@ -98,7 +98,6 @@
             // 
             // mnuDebug
             // 
-            this.mnuDebug.Enabled = false;
             this.mnuDebug.Name = "mnuDebug";
             this.mnuDebug.Size = new System.Drawing.Size(54, 20);
             this.mnuDebug.Text = "Debug";

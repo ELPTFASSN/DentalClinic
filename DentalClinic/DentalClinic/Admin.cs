@@ -14,6 +14,11 @@ namespace DentalClinic
 {
     public partial class Admin : Form
     {
+        /// <summary>
+        /// Connection String
+        /// </summary>
+        SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
+
         public Admin()
         {
             InitializeComponent();
@@ -26,7 +31,7 @@ namespace DentalClinic
             m.Show();
         }
 
-        SQLLib sQuery = new SQLLib("MKT106-SC-21", "DentalClinic");
+        
 
         private void AddBtn_Click(object sender, EventArgs e)
         {

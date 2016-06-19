@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 namespace OLELib
 {
     //@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\isada.shaira\Desktop\JobRecruitmentForm\JRSDatabase.accdb";
+    //protected string DBFileName = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source = " + Path.GetFullPath(".\\") + "DentalClinic.accdb";
     public class OLEConnect : Interface.iConnect
     {
         private string dataSource;
@@ -28,7 +30,7 @@ namespace OLELib
         /// <returns></returns>
         public string ConnectString()
         {
-            return string.Concat("Provider=", DataProvider, ";Data Source=", DataSource);
+            return string.Concat("Provider=", DataProvider, ";Data Source = ", Path.GetFullPath(".\\"), DataSource);
         }
 
         /// <summary>

@@ -87,8 +87,10 @@ namespace DentalClinic
             return result;
         }
 
-        
-
+        /// <summary>
+        /// Check if Administrator
+        /// </summary>
+        /// <returns></returns>
         public static bool isAdministrator()
         {
             bool result = false;
@@ -103,6 +105,10 @@ namespace DentalClinic
             return result;
         }
 
+        /// <summary>
+        /// Check if Dentist
+        /// </summary>
+        /// <returns></returns>
         public static bool isDentist()
         {
             bool result = false;
@@ -117,6 +123,10 @@ namespace DentalClinic
             return result;
         }
 
+        /// <summary>
+        /// Check if Assistant
+        /// </summary>
+        /// <returns></returns>
         public static bool isAssistant()
         {
             bool result = false;
@@ -131,6 +141,12 @@ namespace DentalClinic
             return result;
         }
 
+        /// <summary>
+        /// Store credentials to accessible global variables
+        /// </summary>
+        /// <param name="_username"></param>
+        /// <param name="_password"></param>
+        /// <param name="_restriction"></param>
         public static void setCredentials(string _username, string _password, string _restriction)
         {
             Username = _username;

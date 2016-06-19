@@ -98,7 +98,7 @@
             this.txtDataProvider.Name = "txtDataProvider";
             this.txtDataProvider.Size = new System.Drawing.Size(615, 20);
             this.txtDataProvider.TabIndex = 6;
-            this.txtDataProvider.Text = "OPENLAB-MKT-01";
+            this.txtDataProvider.Text = ".\\SQLEXPRESS";
             this.txtDataProvider.TextChanged += new System.EventHandler(this.txtDataProvider_TextChanged);
             // 
             // txtDataSource

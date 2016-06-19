@@ -1,4 +1,5 @@
 create database DentalClinic
+--drop database DentalClinic
 
 use DentalClinic
 

@@ -49,42 +49,35 @@ namespace OLELib
         /// <param name="targetDataGridView"></param>
         public void CommandExec(TextBox oleCommandFromTextBox, DataGridView targetDataGridView)
         {
-            string ConnStr = ConnectString();
-            OleDbConnection conn = new OleDbConnection(ConnStr);
-
-
-            conn.Open();
-            OleDbCommand cmd = new OleDbCommand(oleCommandFromTextBox.Text, conn);
-            OleDbDataReader objReader;
-
-            objReader = cmd.ExecuteReader();
-            if (objReader != null)
+            OleDbConnection DBConnection = new OleDbConnection(ConnectString());
+            OleDbCommand DBCommand = new OleDbCommand(oleCommandFromTextBox.Text, DBConnection);
+            DBConnection.Open();
+            if (DBConnection.State == ConnectionState.Open)
             {
-                targetDataGridView.DataSource = objReader;
-                conn.Close();
-            }
-
-            /*
-            try
-            {
-                if (conn.State == ConnectionState.Open)
+                try
                 {
-                    cmd.ExecuteNonQuery();
-                    OleDbDataAdapter dataAdapter = new OleDbDataAdapter(oleCommandFromTextBox.Text, conn);
+                    DBCommand.ExecuteNonQuery();
+                    OleDbDataAdapter dataAdapter = new OleDbDataAdapter(oleCommandFromTextBox.Text, DBConnection);
                     DataSet dataSet = new DataSet();
                     dataAdapter.Fill(dataSet);
 
                     targetDataGridView.DataSource = dataSet.Tables[0];
+                    DBConnection.Close();
+                }
+                catch (OleDbException dberr)
+                {
+                    MessageBox.Show(dberr.Message, dberr.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DBConnection.Close();
+                }
+                finally
+                {
+                    DBConnection.Close();
                 }
             }
-            catch(Exception err1)
+            else
             {
-                MessageBox.Show(err1.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Something's wrong with Database connection, Check Directory.");
             }
-            finally
-            {
-                conn.Close();
-            }*/
         }
 
         /// <summary>
@@ -94,26 +87,34 @@ namespace OLELib
         /// <param name="targetDataGridView"></param>
         public void CommandExec(string oleCommand, DataGridView targetDataGridView)
         {
-            OleDbConnection conn = new OleDbConnection(ConnectString());
-            OleDbCommand cmd = new OleDbCommand(oleCommand, conn);
+            OleDbConnection DBConnection = new OleDbConnection(ConnectString());
+            OleDbCommand DBCommand = new OleDbCommand(oleCommand, DBConnection);
+            DBConnection.Open();
+            if (DBConnection.State == ConnectionState.Open)
+            {
+                try
+                {
+                    DBCommand.ExecuteNonQuery();
+                    OleDbDataAdapter dataAdapter = new OleDbDataAdapter(oleCommand, DBConnection);
+                    DataSet dataSet = new DataSet();
+                    dataAdapter.Fill(dataSet);
 
-            conn.Open();
-            try
-            {
-                cmd.ExecuteNonQuery();
-                OleDbDataAdapter dataAdapter = new OleDbDataAdapter(oleCommand, conn);
-                DataSet dataSet = new DataSet();
-                dataAdapter.Fill(dataSet);
-
-                targetDataGridView.DataSource = dataSet.Tables[0];
+                    targetDataGridView.DataSource = dataSet.Tables[0];
+                    DBCommand.Cancel();
+                }
+                catch (OleDbException dberr)
+                {
+                    MessageBox.Show(dberr.Message,dberr.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DBConnection.Close();
+                }
+                finally
+                {
+                    DBConnection.Close();
+                }
             }
-            catch (Exception err2)
+            else
             {
-                MessageBox.Show(err2.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
+                MessageBox.Show("Something's wrong with Database connection, Check Directory.");
             }
         }
     }

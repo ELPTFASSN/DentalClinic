@@ -81,7 +81,6 @@ namespace DentalClinic
                     if (cboEmpRestriction.Text == "Administrator")
                     {
                         MessageBox.Show("Successfully Logged In", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = DialogResult.OK;
                         WinForms.Admin.Show();
                         WinForms.Main.Hide();
                         globals.setCredentials(txtEmpUser.Text,txtEmpPass.Text,cboEmpRestriction.Text);
@@ -90,7 +89,6 @@ namespace DentalClinic
                     else if (cboEmpRestriction.Text == "Dentist")
                     {
                         MessageBox.Show("Successfully Logged In", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = DialogResult.OK;
                         WinForms.Dentist.Show();
                         WinForms.Main.Hide();
                         globals.setCredentials(txtEmpUser.Text, txtEmpPass.Text, cboEmpRestriction.Text);
@@ -98,7 +96,6 @@ namespace DentalClinic
                     else
                     {
                         MessageBox.Show("Successfully Logged In", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.DialogResult = DialogResult.OK;
                         WinForms.Employee.Show();
                         WinForms.Main.Hide();
                         globals.setCredentials(txtEmpUser.Text, txtEmpPass.Text, cboEmpRestriction.Text);
