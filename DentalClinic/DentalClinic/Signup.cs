@@ -124,5 +124,17 @@ namespace DentalClinic
             insertData(123, "Last", "First", 12, 123456, "aaa", "123","Administrator");
 
         }
+
+        private void btnClearAll_Click(object sender, EventArgs e)
+        {
+            txtEmpCode.Text = "";
+            txtEmpFName.Text = "";
+            txtEmpLName.Text = "";
+            txtEmpAge.Text = "";
+            txtEmpContact.Text = "";
+            txtEmpUser.Text = "";
+            txtEmpPass.Text = "";
+            cboEmpRestriction.Text = "";
+        }
     }
 }

@@ -49,7 +49,6 @@
             this.cboEmpRestriction = new System.Windows.Forms.ComboBox();
             this.txtEmpCode = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnTest = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +70,7 @@
             this.btnClearAll.TabIndex = 1;
             this.btnClearAll.Text = "Clear All";
             this.btnClearAll.UseVisualStyleBackColor = true;
+            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
             // 
             // menuStrip1
             // 
@@ -231,22 +231,11 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Employee Code";
             // 
-            // btnTest
-            // 
-            this.btnTest.Location = new System.Drawing.Point(349, 74);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(75, 23);
-            this.btnTest.TabIndex = 19;
-            this.btnTest.Text = "button1";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
-            // 
             // Signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 343);
-            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.txtEmpCode);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cboEmpRestriction);
@@ -300,6 +289,5 @@
         private System.Windows.Forms.ComboBox cboEmpRestriction;
         private System.Windows.Forms.TextBox txtEmpCode;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnTest;
     }
 }

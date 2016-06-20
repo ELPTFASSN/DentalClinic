@@ -15,5 +15,47 @@ namespace DentalClinic
         {
             InitializeComponent();
         }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.Dentist.Show();
+            WinForms.Staff.Hide();
+        }
+
+     /*   private void scheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.Dentist.Show();
+            WinForms.Staff.Hide();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.Dentist.Show();
+            WinForms.Staff.Hide();
+        }
+*/
+        private void patientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.Patient.Show();
+            WinForms.Staff.Hide();
+        }
+
+        private void scheduleToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            WinForms.Dentist.Show();
+            WinForms.Staff.Hide();
+        }
+
+        private void inventoryToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            WinForms.Inventory.Show();
+            WinForms.Staff.Hide();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.Main.Show();
+            WinForms.Staff.Hide();
+        }
     }
 }

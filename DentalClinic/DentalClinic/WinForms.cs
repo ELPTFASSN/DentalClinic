@@ -49,16 +49,16 @@ namespace DentalClinic
             }
         }
 
-        private static Form employee;
-        public static Form Employee
+        private static Form patient;
+        public static Form Patient
         {
             get
             {
-                if (employee == null)
+                if (patient == null)
                 {
-                    employee = new frmEmployee();
+                    patient = new frmEmployee();
                 }
-                return employee;
+                return patient;
             }
         }
 

@@ -74,11 +74,11 @@
     <Compile Include="Dentist.Designer.cs">
       <DependentUpon>Dentist.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employee.cs">
+    <Compile Include="Patient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Employee.Designer.cs">
-      <DependentUpon>Employee.cs</DependentUpon>
+    <Compile Include="Patient.Designer.cs">
+      <DependentUpon>Patient.cs</DependentUpon>
     </Compile>
     <Compile Include="globals.cs" />
     <Compile Include="Internals\Credentials.cs" />
@@ -126,8 +126,8 @@
     <EmbeddedResource Include="Dentist.resx">
       <DependentUpon>Dentist.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee.resx">
-      <DependentUpon>Employee.cs</DependentUpon>
+    <EmbeddedResource Include="Patient.resx">
+      <DependentUpon>Patient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>

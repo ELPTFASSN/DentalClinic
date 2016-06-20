@@ -26,9 +26,8 @@ namespace DentalClinic
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmMain m = new frmMain();
-            m.Show();
+            WinForms.Main.Show();
+            WinForms.Admin.Hide(); 
         }
 
         
@@ -208,9 +207,20 @@ namespace DentalClinic
 
         private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Inventory i = new Inventory();
-            i.Show();
+            WinForms.Inventory.Show();
+            WinForms.Admin.Hide(); 
+        }
+
+        private void scheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.Dentist.Show();
+            WinForms.Admin.Hide(); 
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.Dentist.Show();
+            WinForms.Admin.Hide(); 
         }
         }
     }

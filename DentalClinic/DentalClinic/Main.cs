@@ -96,7 +96,7 @@ namespace DentalClinic
                     else
                     {
                         MessageBox.Show("Successfully Logged In", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        WinForms.Employee.Show();
+                        WinForms.Patient.Show();
                         WinForms.Main.Hide();
                         globals.setCredentials(txtEmpUser.Text, txtEmpPass.Text, cboEmpRestriction.Text);
                     }

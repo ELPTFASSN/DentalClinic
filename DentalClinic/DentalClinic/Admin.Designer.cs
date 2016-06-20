@@ -92,6 +92,7 @@
             this.scheduleToolStripMenuItem.Name = "scheduleToolStripMenuItem";
             this.scheduleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.scheduleToolStripMenuItem.Text = "Schedule";
+            this.scheduleToolStripMenuItem.Click += new System.EventHandler(this.scheduleToolStripMenuItem_Click);
             // 
             // usersToolStripMenuItem
             // 
@@ -102,24 +103,25 @@
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
             this.usersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.usersToolStripMenuItem.Text = "Users";
+            this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
             // patientToolStripMenuItem1
             // 
             this.patientToolStripMenuItem1.Name = "patientToolStripMenuItem1";
-            this.patientToolStripMenuItem1.Size = new System.Drawing.Size(111, 22);
+            this.patientToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.patientToolStripMenuItem1.Text = "Staff";
             this.patientToolStripMenuItem1.Click += new System.EventHandler(this.patientToolStripMenuItem1_Click);
             // 
             // dentistToolStripMenuItem
             // 
             this.dentistToolStripMenuItem.Name = "dentistToolStripMenuItem";
-            this.dentistToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.dentistToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dentistToolStripMenuItem.Text = "Dentist";
             // 
             // patientToolStripMenuItem
             // 
             this.patientToolStripMenuItem.Name = "patientToolStripMenuItem";
-            this.patientToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.patientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.patientToolStripMenuItem.Text = "Patient";
             // 
             // cboPatientSex
@@ -156,7 +158,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(12, 104);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 14);
+            this.label9.Size = new System.Drawing.Size(62, 16);
             this.label9.TabIndex = 49;
             this.label9.Text = "Patient ID:";
             // 
@@ -173,7 +175,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(12, 373);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 14);
+            this.label8.Size = new System.Drawing.Size(52, 16);
             this.label8.TabIndex = 47;
             this.label8.Text = "Contact:";
             // 
@@ -183,7 +185,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(12, 335);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 14);
+            this.label7.Size = new System.Drawing.Size(53, 16);
             this.label7.TabIndex = 46;
             this.label7.Text = "Address:";
             // 
@@ -193,7 +195,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(12, 298);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 14);
+            this.label6.Size = new System.Drawing.Size(29, 16);
             this.label6.TabIndex = 45;
             this.label6.Text = "Sex:";
             // 
@@ -230,7 +232,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 259);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 14);
+            this.label5.Size = new System.Drawing.Size(32, 16);
             this.label5.TabIndex = 41;
             this.label5.Text = "Age:";
             // 
@@ -256,7 +258,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 183);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 14);
+            this.label4.Size = new System.Drawing.Size(82, 16);
             this.label4.TabIndex = 39;
             this.label4.Text = "Middle Name:";
             // 
@@ -266,7 +268,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(12, 221);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 14);
+            this.label3.Size = new System.Drawing.Size(66, 16);
             this.label3.TabIndex = 38;
             this.label3.Text = "Last Name:";
             // 
@@ -276,7 +278,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 144);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 14);
+            this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 37;
             this.label2.Text = "First Name:";
             // 
@@ -347,7 +349,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 14);
+            this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 29;
             this.label1.Text = "Search by:";
             // 

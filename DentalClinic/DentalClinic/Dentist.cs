@@ -43,5 +43,28 @@ namespace DentalClinic
         {
             globals.removeSchedule(datagridSched);
         }
+
+        private void patientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.Patient.Show();
+            WinForms.Dentist.Hide();  
+        }
+
+        private void scheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.Inventory.Show();
+            WinForms.Dentist.Hide();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.Main.Show();
+            WinForms.Inventory.Hide(); 
+        }
     }
 }

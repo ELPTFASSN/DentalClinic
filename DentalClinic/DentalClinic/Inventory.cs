@@ -149,5 +149,33 @@ namespace DentalClinic
             }
 
         }
+
+        private void patientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.Staff.Show();
+            WinForms.Inventory.Hide();  
+        }
+
+        private void scheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.Dentist.Show();
+            WinForms.Inventory.Hide();                    
+        }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.Main.Show();
+            WinForms.Inventory.Hide();  
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

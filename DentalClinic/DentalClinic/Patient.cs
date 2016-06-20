@@ -47,7 +47,7 @@ namespace DentalClinic
             {
                 e.Cancel = true;
                 WinForms.Main.Show();
-                WinForms.Employee.Hide();
+                WinForms.Patient.Hide();
             }
         }
 
@@ -141,10 +141,8 @@ namespace DentalClinic
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmMain m = new frmMain();
-            m.Show();
-
+            WinForms.Main.Show();
+            WinForms.Patient.Hide();  
         }
 
         private void txtPatientSearch_TextChanged(object sender, EventArgs e)
@@ -223,6 +221,24 @@ namespace DentalClinic
         private void dataPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void patientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void scheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.Dentist.Show();
+            WinForms.Patient.Hide();
+        }
+
+        private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.Inventory.Show();
+            WinForms.Patient.Hide();
+           
         }
 
        
