@@ -117,12 +117,14 @@
             this.dentistToolStripMenuItem.Name = "dentistToolStripMenuItem";
             this.dentistToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dentistToolStripMenuItem.Text = "Dentist";
+            this.dentistToolStripMenuItem.Click += new System.EventHandler(this.dentistToolStripMenuItem_Click);
             // 
             // patientToolStripMenuItem
             // 
             this.patientToolStripMenuItem.Name = "patientToolStripMenuItem";
             this.patientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.patientToolStripMenuItem.Text = "Patient";
+            this.patientToolStripMenuItem.Click += new System.EventHandler(this.patientToolStripMenuItem_Click);
             // 
             // cboPatientSex
             // 

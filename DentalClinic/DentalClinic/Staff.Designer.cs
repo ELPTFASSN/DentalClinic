@@ -31,10 +31,10 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusEmployee = new System.Windows.Forms.ToolStripStatusLabel();
-            this.txtPatientSearch = new System.Windows.Forms.TextBox();
+            this.txtStaffSearch = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataStaff = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataStaff)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,12 +89,13 @@
             this.statusEmployee.Size = new System.Drawing.Size(12, 17);
             this.statusEmployee.Text = "-";
             // 
-            // txtPatientSearch
+            // txtStaffSearch
             // 
-            this.txtPatientSearch.Location = new System.Drawing.Point(248, 58);
-            this.txtPatientSearch.Name = "txtPatientSearch";
-            this.txtPatientSearch.Size = new System.Drawing.Size(136, 20);
-            this.txtPatientSearch.TabIndex = 49;
+            this.txtStaffSearch.Location = new System.Drawing.Point(248, 58);
+            this.txtStaffSearch.Name = "txtStaffSearch";
+            this.txtStaffSearch.Size = new System.Drawing.Size(136, 20);
+            this.txtStaffSearch.TabIndex = 49;
+            this.txtStaffSearch.TextChanged += new System.EventHandler(this.txtPatientSearch_TextChanged);
             // 
             // comboBox1
             // 
@@ -118,14 +119,16 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "Search by:";
             // 
-            // dataGridView1
+            // dataStaff
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(402, 58);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            this.dataGridView1.Size = new System.Drawing.Size(447, 348);
-            this.dataGridView1.TabIndex = 50;
+            this.dataStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataStaff.Location = new System.Drawing.Point(402, 58);
+            this.dataStaff.Name = "dataStaff";
+            this.dataStaff.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+            this.dataStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataStaff.Size = new System.Drawing.Size(447, 348);
+            this.dataStaff.TabIndex = 50;
+            this.dataStaff.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataStaff_MouseDoubleClick);
             // 
             // label2
             // 
@@ -271,6 +274,7 @@
             this.button1.TabIndex = 70;
             this.button1.Text = "CLEAR ALL";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DelBtn
             // 
@@ -280,6 +284,7 @@
             this.DelBtn.TabIndex = 69;
             this.DelBtn.Text = "DELETE";
             this.DelBtn.UseVisualStyleBackColor = true;
+            this.DelBtn.Click += new System.EventHandler(this.DelBtn_Click);
             // 
             // AddBtn
             // 
@@ -289,6 +294,7 @@
             this.AddBtn.TabIndex = 68;
             this.AddBtn.Text = "ADD";
             this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // EditBtn
             // 
@@ -298,6 +304,7 @@
             this.EditBtn.TabIndex = 67;
             this.EditBtn.Text = "EDIT";
             this.EditBtn.UseVisualStyleBackColor = true;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // menuStrip1
             // 
@@ -374,16 +381,17 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtPatientSearch);
+            this.Controls.Add(this.dataStaff);
+            this.Controls.Add(this.txtStaffSearch);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip1);
             this.Name = "Staff";
             this.Text = "Staff";
+            this.Load += new System.EventHandler(this.Staff_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataStaff)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -396,10 +404,10 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel statusEmployee;
-        private System.Windows.Forms.TextBox txtPatientSearch;
+        private System.Windows.Forms.TextBox txtStaffSearch;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataStaff;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

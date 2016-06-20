@@ -17,7 +17,7 @@ namespace DentalClinic
         /// <summary>
         /// Connection String
         /// </summary>
-        SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
+        SQLLib sQuery = new SQLLib("OPENLAB-MKT-22", "DentalClinic");
         //
         public frmDentist()
         {
@@ -65,6 +65,11 @@ namespace DentalClinic
         {
             WinForms.Main.Show();
             WinForms.Inventory.Hide(); 
+        }
+
+        private void frmDentist_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

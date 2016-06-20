@@ -17,7 +17,7 @@ namespace DentalClinic
         /// <summary>
         /// Connection String
         /// </summary>
-        SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
+        SQLLib sQuery = new SQLLib("OPENLAB-MKT-22", "DentalClinic");
 
         public Admin()
         {
@@ -219,8 +219,18 @@ namespace DentalClinic
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void dentistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             WinForms.Dentist.Show();
             WinForms.Admin.Hide(); 
+        }
+
+        private void patientToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
         }
     }

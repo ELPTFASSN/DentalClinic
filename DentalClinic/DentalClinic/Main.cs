@@ -19,7 +19,7 @@ namespace DentalClinic
         //SQLLib queri = new SQLLib("Microsoft.ACE.OLEDB.12.0;", "DentalClinic.accdb");
         
         //SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
-        SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
+        SQLLib sQuery = new SQLLib("OPENLAB-MKT-22", "DentalClinic");
         public frmMain()
         {
             InitializeComponent();
@@ -125,6 +125,17 @@ namespace DentalClinic
             {
                 mnuDebug.Enabled = globals.isAdministrator();
             }
+        }
+
+        private void frmMain_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void signUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WinForms.SignUp.Show();
+            WinForms.Main.Hide(); 
         }
     }
 }

@@ -54,7 +54,7 @@
             // 
             // btnSignup
             // 
-            this.btnSignup.Location = new System.Drawing.Point(122, 291);
+            this.btnSignup.Location = new System.Drawing.Point(139, 291);
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.Size = new System.Drawing.Size(75, 23);
             this.btnSignup.TabIndex = 0;
@@ -64,7 +64,7 @@
             // 
             // btnClearAll
             // 
-            this.btnClearAll.Location = new System.Drawing.Point(213, 291);
+            this.btnClearAll.Location = new System.Drawing.Point(230, 291);
             this.btnClearAll.Name = "btnClearAll";
             this.btnClearAll.Size = new System.Drawing.Size(75, 23);
             this.btnClearAll.TabIndex = 1;
@@ -93,7 +93,7 @@
             // mnuFileLogin
             // 
             this.mnuFileLogin.Name = "mnuFileLogin";
-            this.mnuFileLogin.Size = new System.Drawing.Size(104, 22);
+            this.mnuFileLogin.Size = new System.Drawing.Size(152, 22);
             this.mnuFileLogin.Text = "Login";
             this.mnuFileLogin.Click += new System.EventHandler(this.mnuFileLogin_Click);
             // 
@@ -259,6 +259,7 @@
             this.Name = "Signup";
             this.Text = "Sign up";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Signup_FormClosing);
+            this.Load += new System.EventHandler(this.Signup_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

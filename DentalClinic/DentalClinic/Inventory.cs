@@ -20,7 +20,7 @@ namespace DentalClinic
         }
 
 
-        SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
+        SQLLib sQuery = new SQLLib("OPENLAB-MKT-22", "DentalClinic");
 
         void update()
         {
@@ -130,9 +130,9 @@ namespace DentalClinic
                 con.Close();
             }
 
-            else if (comboBox1.Text == "First Name")
+            else if (comboBox1.Text == "Name")
             {
-                adapt = new SqlDataAdapter("select * from Patient where P_FName like '" + txtInvSearch.Text + "%'", con);
+                adapt = new SqlDataAdapter("select * from Inventory where Inv_Name like '" + txtInvSearch.Text + "%'", con);
                 dt = new DataTable();
                 adapt.Fill(dt);
                 dataInventory.DataSource = dt;
@@ -141,7 +141,7 @@ namespace DentalClinic
 
             else
             {
-                adapt = new SqlDataAdapter("select * from Patient where P_LName like '" + txtInvSearch.Text + "%'", con);
+                adapt = new SqlDataAdapter("select * from Inventory where Inv_Quantity like '" + txtInvSearch.Text + "%'", con);
                 dt = new DataTable();
                 adapt.Fill(dt);
                 dataInventory.DataSource = dt;
