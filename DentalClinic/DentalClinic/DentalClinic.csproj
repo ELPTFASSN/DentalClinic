@@ -184,6 +184,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="DentalQuery.sql" />
+    <None Include="Resources\DentalClinic.png" />
     <None Include="Resources\mandadero.png" />
     <None Include="Resources\aloba.png" />
     <None Include="Resources\benigno.png" />

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Signup));
             this.btnSignup = new System.Windows.Forms.Button();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -93,7 +94,7 @@
             // mnuFileLogin
             // 
             this.mnuFileLogin.Name = "mnuFileLogin";
-            this.mnuFileLogin.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileLogin.Size = new System.Drawing.Size(104, 22);
             this.mnuFileLogin.Text = "Login";
             this.mnuFileLogin.Click += new System.EventHandler(this.mnuFileLogin_Click);
             // 
@@ -255,6 +256,7 @@
             this.Controls.Add(this.btnClearAll);
             this.Controls.Add(this.btnSignup);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Signup";
             this.Text = "Sign up";

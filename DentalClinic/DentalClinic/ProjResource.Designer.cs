@@ -81,6 +81,16 @@ namespace DentalClinic {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DentalClinic {
+            get {
+                object obj = ResourceManager.GetObject("DentalClinic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Marie Santiago.
         /// </summary>
         internal static string dev1Name {

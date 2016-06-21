@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDentist));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusDentist = new System.Windows.Forms.ToolStripStatusLabel();
@@ -215,6 +216,7 @@
             this.Controls.Add(this.datagridSched);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.statusStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDentist";
             this.Text = "Dentist";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDentist_FormClosing);

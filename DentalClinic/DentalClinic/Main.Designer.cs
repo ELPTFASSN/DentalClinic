@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -51,13 +52,14 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFile,
             this.mnuAbout,
             this.mnuDebug});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(617, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(499, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,19 +76,19 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(111, 6);
             // 
             // signUpToolStripMenuItem
             // 
             this.signUpToolStripMenuItem.Name = "signUpToolStripMenuItem";
-            this.signUpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.signUpToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.signUpToolStripMenuItem.Text = "Sign up";
             this.signUpToolStripMenuItem.Click += new System.EventHandler(this.signUpToolStripMenuItem_Click);
             // 
             // mnuFileExit
             // 
             this.mnuFileExit.Name = "mnuFileExit";
-            this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileExit.Size = new System.Drawing.Size(114, 22);
             this.mnuFileExit.Text = "E&xit";
             this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
             // 
@@ -107,7 +109,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(218, 263);
+            this.btnLogin.Location = new System.Drawing.Point(174, 361);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 1;
@@ -117,7 +119,7 @@
             // 
             // btnSignup
             // 
-            this.btnSignup.Location = new System.Drawing.Point(322, 263);
+            this.btnSignup.Location = new System.Drawing.Point(278, 361);
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.Size = new System.Drawing.Size(75, 23);
             this.btnSignup.TabIndex = 2;
@@ -128,8 +130,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(105, 50);
+            this.label1.Location = new System.Drawing.Point(49, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(400, 57);
             this.label1.TabIndex = 3;
@@ -138,7 +141,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(166, 159);
+            this.label2.Location = new System.Drawing.Point(122, 257);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 4;
@@ -147,7 +150,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(166, 195);
+            this.label3.Location = new System.Drawing.Point(122, 293);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 5;
@@ -155,14 +158,14 @@
             // 
             // txtEmpUser
             // 
-            this.txtEmpUser.Location = new System.Drawing.Point(260, 152);
+            this.txtEmpUser.Location = new System.Drawing.Point(216, 250);
             this.txtEmpUser.Name = "txtEmpUser";
             this.txtEmpUser.Size = new System.Drawing.Size(152, 20);
             this.txtEmpUser.TabIndex = 6;
             // 
             // txtEmpPass
             // 
-            this.txtEmpPass.Location = new System.Drawing.Point(260, 188);
+            this.txtEmpPass.Location = new System.Drawing.Point(216, 286);
             this.txtEmpPass.Name = "txtEmpPass";
             this.txtEmpPass.PasswordChar = '*';
             this.txtEmpPass.Size = new System.Drawing.Size(152, 20);
@@ -171,7 +174,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(166, 232);
+            this.label4.Location = new System.Drawing.Point(122, 330);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 8;
@@ -184,7 +187,7 @@
             "Administrator",
             "Dentist",
             "Assistant"});
-            this.cboEmpRestriction.Location = new System.Drawing.Point(260, 224);
+            this.cboEmpRestriction.Location = new System.Drawing.Point(216, 322);
             this.cboEmpRestriction.Name = "cboEmpRestriction";
             this.cboEmpRestriction.Size = new System.Drawing.Size(152, 21);
             this.cboEmpRestriction.TabIndex = 9;
@@ -194,7 +197,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 327);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImage = global::DentalClinic.ProjResource.DentalClinic;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(499, 500);
             this.Controls.Add(this.cboEmpRestriction);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtEmpPass);
@@ -205,7 +211,10 @@
             this.Controls.Add(this.btnSignup);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "frmMain";
             this.Text = "Dental Clinic";
             this.Activated += new System.EventHandler(this.frmMain_Activated);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAbout));
             this.imgDev1 = new System.Windows.Forms.PictureBox();
             this.imgDev2 = new System.Windows.Forms.PictureBox();
             this.imgDev3 = new System.Windows.Forms.PictureBox();
@@ -194,6 +195,7 @@
             this.ClientSize = new System.Drawing.Size(356, 492);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAbout";
