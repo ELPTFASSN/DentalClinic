@@ -28,6 +28,7 @@ namespace DentalClinic
         }
 
         public static SQLLib sQuery = new SQLLib(DataProvider, DataSource);
+        public static OLib oQuery = new OLib("Microsoft.ACE.OLEDB.12.0", "DentalClinic.accdb");
         /// <summary>
         /// Displays developer information in aboutbox
         /// </summary>
@@ -167,6 +168,7 @@ namespace DentalClinic
             sQuery.Command = "insert into Schedule values('" + scheduleID.Text + "','" + date.Value + "','" + time.Value + "','" + description.Text + "')";
             sQuery.CommandExec(sQuery.Command.ToString(), outputGridView);
             sQuery.CommandExec("select * from Schedule", outputGridView);
+            MessageBox.Show("Schedule added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
@@ -185,9 +187,32 @@ namespace DentalClinic
                 string pKeyName = outputGridView.SelectedCells[0].OwningRow.Cells[0].OwningColumn.Name;
 
                 sQuery.Command = "delete from Schedule where " + pKeyName + " = " + pKeyValue;
-                sQuery.CommandExec(sQuery.Command, outputGridView);
+                sQuery.CommandExec(sQuery.Command.ToString(), outputGridView);
                 sQuery.CommandExec("select * from Schedule", outputGridView);
+                MessageBox.Show("Schedule removed successfully.", "Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        /// <summary>
+        /// Global SQL Execute Command
+        /// </summary>
+        /// <param name="commandFromTextbox"></param>
+        /// <param name="outputGridView"></param>
+        public static void executeSQL(TextBox commandFromTextbox, DataGridView outputGridView)
+        {
+            sQuery.Command = commandFromTextbox.Text;
+            sQuery.CommandExec(sQuery.Command.ToString(), outputGridView);
+        }
+
+        /// <summary>
+        /// Global OLE Execute Command
+        /// </summary>
+        /// <param name="commandFromTextbox"></param>
+        /// <param name="outputGridView"></param>
+        public static void executeOLE(TextBox commandFromTextbox,DataGridView outputGridView)
+        {
+            oQuery.Command = commandFromTextbox.Text;
+            oQuery.CommandExec(oQuery.Command.ToString(), outputGridView);
         }
     }
 }

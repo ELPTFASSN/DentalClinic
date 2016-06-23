@@ -173,9 +173,13 @@ namespace DentalClinic
             WinForms.Inventory.Hide();  
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Inventory_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                WinForms.Main.Show();
+                WinForms.Inventory.Hide();
+            }
         }
     }
 }

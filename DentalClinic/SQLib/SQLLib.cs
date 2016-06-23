@@ -72,6 +72,7 @@ namespace SQLib
             }
             catch (Exception err1)
             {
+                throw err1;
                 //MessageBox.Show(err1.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
@@ -102,6 +103,7 @@ namespace SQLib
             }
             catch (Exception err2)
             {
+                throw err2;
                 //MessageBox.Show(err2.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally

@@ -44,14 +44,13 @@ namespace DentalClinic
 
         private void btnSQLExec_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(sQuery.ConnectString());
             sQuery = new SQLLib(txtDataProvider.Text, txtDataSource.Text);
             sQuery.CommandExec(txtCommand, dbGrid);
         }
 
         private void btnOLEExec_Click(object sender, EventArgs e)
         {
-            oQuery.CommandExec(txtCommand.Text, dbGrid);
+            oQuery.CommandExec(txtCommand.Text.ToString(), dbGrid);
         }
 
         private void txtDataProvider_TextChanged(object sender, EventArgs e)
@@ -62,6 +61,16 @@ namespace DentalClinic
         private void txtDataSource_TextChanged(object sender, EventArgs e)
         {
             globals.DataSource = txtDataSource.Text;
+        }
+
+        private void txtDataProvider_Click(object sender, EventArgs e)
+        {
+            txtDataProvider.SelectAll();
+        }
+
+        private void txtDataSource_Click(object sender, EventArgs e)
+        {
+            txtDataSource.SelectAll();
         }
     }
 }

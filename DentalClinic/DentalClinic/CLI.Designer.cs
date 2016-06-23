@@ -99,6 +99,7 @@
             this.txtDataProvider.Size = new System.Drawing.Size(615, 20);
             this.txtDataProvider.TabIndex = 6;
             this.txtDataProvider.Text = ".\\SQLEXPRESS";
+            this.txtDataProvider.Click += new System.EventHandler(this.txtDataProvider_Click);
             this.txtDataProvider.TextChanged += new System.EventHandler(this.txtDataProvider_TextChanged);
             // 
             // txtDataSource
@@ -107,7 +108,8 @@
             this.txtDataSource.Name = "txtDataSource";
             this.txtDataSource.Size = new System.Drawing.Size(615, 20);
             this.txtDataSource.TabIndex = 7;
-            this.txtDataSource.Text = "Dentista";
+            this.txtDataSource.Text = "DentalClinic";
+            this.txtDataSource.Click += new System.EventHandler(this.txtDataSource_Click);
             this.txtDataSource.TextChanged += new System.EventHandler(this.txtDataSource_TextChanged);
             // 
             // frmCLI

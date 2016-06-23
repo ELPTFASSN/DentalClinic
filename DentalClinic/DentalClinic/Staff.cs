@@ -42,24 +42,6 @@ namespace DentalClinic
             con.Close();
         }
 
-  /*      private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            WinForms.Dentist.Show();
-            WinForms.Staff.Hide();
-        }
-
-        private void scheduleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            WinForms.Dentist.Show();
-            WinForms.Staff.Hide();
-        }
-
-        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            WinForms.Dentist.Show();
-            WinForms.Staff.Hide();
-        }
-*/
         private void patientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             WinForms.Patient.Show();
@@ -233,6 +215,12 @@ namespace DentalClinic
             txtStaffContact.Text = dataStaff.SelectedRows[0].Cells[5].Value.ToString();
             txtStaffUser.Text = dataStaff.SelectedRows[0].Cells[6].Value.ToString();
             txtStaffPassword.Text = dataStaff.SelectedRows[0].Cells[7].Value.ToString();
+        }
+
+        private void Staff_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            WinForms.Main.Show();
+            WinForms.Staff.Hide();
         }
     }
 }

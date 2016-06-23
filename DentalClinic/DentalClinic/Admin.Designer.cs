@@ -66,6 +66,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.label10 = new System.Windows.Forms.Label();
+            this.mnuDebug = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataPatient)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -84,14 +85,14 @@
             // inventoryToolStripMenuItem
             // 
             this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inventoryToolStripMenuItem.Text = "Inventory";
             this.inventoryToolStripMenuItem.Click += new System.EventHandler(this.inventoryToolStripMenuItem_Click);
             // 
             // scheduleToolStripMenuItem
             // 
             this.scheduleToolStripMenuItem.Name = "scheduleToolStripMenuItem";
-            this.scheduleToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.scheduleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.scheduleToolStripMenuItem.Text = "Schedule";
             this.scheduleToolStripMenuItem.Click += new System.EventHandler(this.scheduleToolStripMenuItem_Click);
             // 
@@ -102,28 +103,27 @@
             this.dentistToolStripMenuItem,
             this.patientToolStripMenuItem});
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.usersToolStripMenuItem.Text = "Users";
-            this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
             // patientToolStripMenuItem1
             // 
             this.patientToolStripMenuItem1.Name = "patientToolStripMenuItem1";
-            this.patientToolStripMenuItem1.Size = new System.Drawing.Size(111, 22);
+            this.patientToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.patientToolStripMenuItem1.Text = "Staff";
             this.patientToolStripMenuItem1.Click += new System.EventHandler(this.patientToolStripMenuItem1_Click);
             // 
             // dentistToolStripMenuItem
             // 
             this.dentistToolStripMenuItem.Name = "dentistToolStripMenuItem";
-            this.dentistToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.dentistToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dentistToolStripMenuItem.Text = "Dentist";
             this.dentistToolStripMenuItem.Click += new System.EventHandler(this.dentistToolStripMenuItem_Click);
             // 
             // patientToolStripMenuItem
             // 
             this.patientToolStripMenuItem.Name = "patientToolStripMenuItem";
-            this.patientToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.patientToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.patientToolStripMenuItem.Text = "Patient";
             this.patientToolStripMenuItem.Click += new System.EventHandler(this.patientToolStripMenuItem_Click);
             // 
@@ -366,7 +366,6 @@
             this.dataPatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataPatient.Size = new System.Drawing.Size(470, 376);
             this.dataPatient.TabIndex = 28;
-            this.dataPatient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataPatient_CellContentClick);
             this.dataPatient.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataPatient_MouseDoubleClick);
             // 
             // statusStrip1
@@ -384,7 +383,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.logoutToolStripMenuItem});
+            this.logoutToolStripMenuItem,
+            this.mnuDebug});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(878, 24);
@@ -400,6 +400,13 @@
             this.label10.Size = new System.Drawing.Size(163, 24);
             this.label10.TabIndex = 53;
             this.label10.Text = "Patient\'s Profiles";
+            // 
+            // mnuDebug
+            // 
+            this.mnuDebug.Name = "mnuDebug";
+            this.mnuDebug.Size = new System.Drawing.Size(54, 20);
+            this.mnuDebug.Text = "Debug";
+            this.mnuDebug.Click += new System.EventHandler(this.mnuDebug_Click);
             // 
             // Admin
             // 
@@ -436,6 +443,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Admin";
             this.Text = "Admin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Admin_FormClosing);
             this.Load += new System.EventHandler(this.Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataPatient)).EndInit();
             this.statusStrip1.ResumeLayout(false);
@@ -486,5 +494,6 @@
         private System.Windows.Forms.ToolStripMenuItem dentistToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem patientToolStripMenuItem;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ToolStripMenuItem mnuDebug;
     }
 }

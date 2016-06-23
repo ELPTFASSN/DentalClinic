@@ -390,6 +390,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Staff";
             this.Text = "Staff";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Staff_FormClosing);
             this.Load += new System.EventHandler(this.Staff_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

@@ -52,7 +52,7 @@ namespace DentalClinic
 
         private void scheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          
+            throw new NotImplementedException();
         }
 
         private void inventoryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,6 +70,11 @@ namespace DentalClinic
         private void frmDentist_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmDentist_Activated(object sender, EventArgs e)
+        {
+            statusDentist.Text = globals.Username;
         }
     }
 }

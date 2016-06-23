@@ -143,16 +143,10 @@ namespace DentalClinic
             con.Close();
         }
 
-        private void dataPatient_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void patientToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Staff s = new Staff();
-            s.Show();
+            WinForms.Staff.Show();
+            WinForms.Admin.Hide();
         }
 
         private void dataPatient_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -230,7 +224,23 @@ namespace DentalClinic
 
         private void patientToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            WinForms.Patient.Show();
+            WinForms.Admin.Hide();
+        }
 
+        private void Admin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                WinForms.Main.Show();
+                WinForms.Admin.Hide();
+            }
         }
+
+        private void mnuDebug_Click(object sender, EventArgs e)
+        {
+            WinForms.CommandLineInterface.Show();
         }
+    }
     }
