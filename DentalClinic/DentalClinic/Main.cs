@@ -19,7 +19,7 @@ namespace DentalClinic
         //SQLLib queri = new SQLLib("Microsoft.ACE.OLEDB.12.0;", "DentalClinic.accdb");
         
         //SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
-        SQLLib sQuery = new SQLLib("OPENLAB-MKT-22", "DentalClinic");
+        SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
         public frmMain()
         {
             InitializeComponent();

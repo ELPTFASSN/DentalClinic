@@ -60,25 +60,28 @@ namespace SQLib
             SqlConnection conn = new SqlConnection(ConnectString());
             SqlCommand cmd = new SqlCommand(sqlCommand, conn);
             conn.Open();
+            if (conn.State == ConnectionState.Open)
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand, conn);
+                    DataSet dataSet = new DataSet();
+                    dataAdapter.Fill(dataSet);
 
-            try
-            {
-                cmd.ExecuteNonQuery();
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand, conn);
-                DataSet dataSet = new DataSet();
-                dataAdapter.Fill(dataSet);
-
-                targetDataGridView.DataSource = dataSet.Tables[0];
+                    targetDataGridView.DataSource = dataSet.Tables[0];
+                }
+                catch (Exception err1)
+                {
+                    MessageBox.Show(err1.Message, err1.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    conn.Close();
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
-            catch (Exception err1)
-            {
-                throw err1;
-                //MessageBox.Show(err1.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
+            
         }
 
         /// <summary>
@@ -92,24 +95,32 @@ namespace SQLib
             SqlConnection conn = new SqlConnection(ConnectString());
             SqlCommand cmd = new SqlCommand(sqlCommandFromTextBox.Text, conn);
             conn.Open();
-            try
+            if (conn.State == ConnectionState.Open)
             {
-                cmd.ExecuteNonQuery();
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommandFromTextBox.Text, conn);
-                DataSet dataSet = new DataSet();
-                dataAdapter.Fill(dataSet);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommandFromTextBox.Text, conn);
+                    DataSet dataSet = new DataSet();
+                    dataAdapter.Fill(dataSet);
 
-                targetDataGridView.DataSource = dataSet.Tables[0];
+                    targetDataGridView.DataSource = dataSet.Tables[0];
+                }
+                catch (Exception err2)
+                {
+                    MessageBox.Show(err2.Message, err2.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    conn.Close();
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
-            catch (Exception err2)
+            else
             {
-                throw err2;
-                //MessageBox.Show(err2.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Something's wrong with Database connection, Check SQL Connection String if it is accessible.");
             }
-            finally
-            {
-                conn.Close();
-            }
+            
         }
 
         /// <summary>

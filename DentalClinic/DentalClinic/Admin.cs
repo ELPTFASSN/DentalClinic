@@ -17,7 +17,7 @@ namespace DentalClinic
         /// <summary>
         /// Connection String
         /// </summary>
-        SQLLib sQuery = new SQLLib("OPENLAB-MKT-22", "DentalClinic");
+        SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
 
         public Admin()
         {

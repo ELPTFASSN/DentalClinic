@@ -19,7 +19,7 @@ namespace DentalClinic
             InitializeComponent();
         }
 
-        SQLLib sQuery = new SQLLib("OPENLAB-MKT-22", "DentalClinic");
+        SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
 
         void update()
         {

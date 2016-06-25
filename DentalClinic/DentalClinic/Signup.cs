@@ -16,7 +16,7 @@ namespace DentalClinic
 {
     public partial class Signup : Form
     {
-        SQLLib sQuery = new SQLLib("OPENLAB-MKT-22", "DentalClinic");
+        SQLLib sQuery = new SQLLib(".\\SQLEXPRESS", "DentalClinic");
         OLib oQuery = new OLib("Microsoft.ACE.OLEDB.12.0", "DentalClinic.accdb");
         public Signup()
         {
