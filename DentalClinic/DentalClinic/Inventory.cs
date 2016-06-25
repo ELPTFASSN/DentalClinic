@@ -193,7 +193,7 @@ namespace DentalClinic
         private void mnuAdmin_Click(object sender, EventArgs e)
         {
             WinForms.Admin.Show();
-            WinForms.Inventory.Hide()
+            WinForms.Inventory.Hide();
         }
     }
 }
