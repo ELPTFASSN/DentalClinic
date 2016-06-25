@@ -75,7 +75,7 @@ namespace DentalClinic
         private void frmDentist_Activated(object sender, EventArgs e)
         {
             statusDentist.Text = globals.Username;
-            sQuery.CommandExec("SELECT * FROM PATIENT", datagridSched);
+            sQuery.CommandExec("SELECT * FROM Schedule", datagridSched);
         }
     }
 }

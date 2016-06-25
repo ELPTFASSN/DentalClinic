@@ -71,9 +71,8 @@ namespace SQLib
 
                     targetDataGridView.DataSource = dataSet.Tables[0];
                 }
-                catch (Exception err1)
+                catch
                 {
-                    MessageBox.Show(err1.Message, err1.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     conn.Close();
                 }
                 finally
@@ -106,9 +105,8 @@ namespace SQLib
 
                     targetDataGridView.DataSource = dataSet.Tables[0];
                 }
-                catch (Exception err2)
+                catch
                 {
-                    MessageBox.Show(err2.Message, err2.Source, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     conn.Close();
                 }
                 finally
