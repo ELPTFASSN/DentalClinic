@@ -64,7 +64,7 @@ namespace DentalClinic
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             WinForms.Main.Show();
-            WinForms.Inventory.Hide(); 
+            WinForms.Dentist.Hide(); 
         }
 
         private void frmDentist_Load(object sender, EventArgs e)
@@ -76,7 +76,10 @@ namespace DentalClinic
         {
             statusDentist.Text = globals.Username;
             sQuery.CommandExec("SELECT * FROM Schedule", datagridSched);
-            mnuAdmin.Visible = globals.isAdministrator();
+            if (globals.Restriction != null)
+            {
+                mnuAdmin.Visible = globals.isAdministrator();
+            }
         }
 
         private void mnuAdmin_Click(object sender, EventArgs e)

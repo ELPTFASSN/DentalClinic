@@ -225,7 +225,10 @@ namespace DentalClinic
 
         private void Staff_Activated(object sender, EventArgs e)
         {
-            mnuAdmin.Visible = globals.isAdministrator();
+            if (globals.Restriction != null)
+            {
+                mnuAdmin.Visible = globals.isAdministrator();
+            }
         }
 
         private void mnuAdmin_Click(object sender, EventArgs e)

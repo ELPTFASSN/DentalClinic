@@ -95,7 +95,7 @@ namespace DentalClinic
         public static bool isAdministrator()
         {
             bool result = false;
-            if (Restriction.Contains("Admin") || Restriction.Contains("admin".ToLower()) || Restriction.Contains("admin".ToUpper()))
+            if (globals.Restriction.Equals("Administrator"))
             {
                 result = true;
             }
