@@ -76,6 +76,13 @@ namespace DentalClinic
         {
             statusDentist.Text = globals.Username;
             sQuery.CommandExec("SELECT * FROM Schedule", datagridSched);
+            mnuAdmin.Visible = globals.isAdministrator();
+        }
+
+        private void mnuAdmin_Click(object sender, EventArgs e)
+        {
+            WinForms.Admin.Show();
+            WinForms.Dentist.Hide();
         }
     }
 }

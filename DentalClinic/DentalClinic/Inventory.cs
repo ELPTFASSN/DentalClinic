@@ -181,5 +181,16 @@ namespace DentalClinic
                 WinForms.Inventory.Hide();
             }
         }
+
+        private void Inventory_Activated(object sender, EventArgs e)
+        {
+            mnuAdmin.Visible = globals.isAdministrator();
+        }
+
+        private void mnuAdmin_Click(object sender, EventArgs e)
+        {
+            WinForms.Admin.Show();
+            WinForms.Inventory.Hide();
+        }
     }
 }
